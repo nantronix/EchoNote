@@ -2,15 +2,12 @@ import { Icon } from "@iconify-icon/react";
 import {
   Anthropic,
   DeepSeek,
-  LmStudio,
   Mistral,
-  Ollama,
   OpenAI,
   OpenRouter,
 } from "@lobehub/icons";
 import type { ReactNode } from "react";
 
-import { env } from "../../../../env";
 import {
   type ProviderRequirement,
   requiresConfigField,
@@ -29,36 +26,9 @@ type Provider = {
 
 const _PROVIDERS = [
   {
-    id: "echonote",
-    displayName: "EchoNote",
-    badge: "Recommended",
-    icon: <img src="/assets/icon.png" alt="EchoNote" className="size-5" />,
-    baseUrl: new URL("/llm", env.VITE_AI_URL).toString(),
-    requirements: [
-      { kind: "requires_auth" },
-      { kind: "requires_entitlement", entitlement: "pro" },
-    ],
-  },
-  {
-    id: "lmstudio",
-    displayName: "LM Studio",
-    badge: null,
-    icon: <LmStudio size={16} />,
-    baseUrl: "http://127.0.0.1:1234/v1",
-    requirements: [],
-  },
-  {
-    id: "ollama",
-    displayName: "Ollama",
-    badge: null,
-    icon: <Ollama size={16} />,
-    baseUrl: "http://127.0.0.1:11434/v1",
-    requirements: [],
-  },
-  {
     id: "openrouter",
     displayName: "OpenRouter",
-    badge: null,
+    badge: "Recommended",
     icon: <OpenRouter size={16} />,
     baseUrl: "https://openrouter.ai/api/v1",
     requirements: [{ kind: "requires_config", fields: ["api_key"] }],

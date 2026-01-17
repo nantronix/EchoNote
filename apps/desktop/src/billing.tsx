@@ -1,26 +1,4 @@
-import { jwtDecode } from "jwt-decode";
-import {
-  createContext,
-  type ReactNode,
-  useCallback,
-  useContext,
-  useMemo,
-} from "react";
-
-import { commands as openerCommands } from "@echonote/plugin-opener2";
-
-import { useAuth } from "./auth";
-import { env } from "./env";
-import { getScheme } from "./utils";
-
-export function getEntitlementsFromToken(accessToken: string): string[] {
-  try {
-    const decoded = jwtDecode<{ entitlements?: string[] }>(accessToken);
-    return decoded.entitlements ?? [];
-  } catch {
-    return [];
-  }
-}
+import { createContext, type ReactNode, useContext, useMemo } from "react";
 
 type BillingContextValue = {
   entitlements: string[];
@@ -33,35 +11,13 @@ export type BillingAccess = BillingContextValue;
 const BillingContext = createContext<BillingContextValue | null>(null);
 
 export function BillingProvider({ children }: { children: ReactNode }) {
-  const auth = useAuth();
-
-  const entitlements = useMemo(() => {
-    if (!auth?.session?.access_token) {
-      return [];
-    }
-    return getEntitlementsFromToken(auth.session.access_token);
-  }, [auth?.session?.access_token]);
-
-  const isPro = useMemo(
-    () => entitlements.includes("echonote_pro"),
-    [entitlements],
-  );
-
-  const upgradeToPro = useCallback(async () => {
-    const scheme = await getScheme();
-    void openerCommands.openUrl(
-      `${env.VITE_APP_URL}/app/checkout?period=monthly&scheme=${scheme}`,
-      null,
-    );
-  }, []);
-
   const value = useMemo<BillingContextValue>(
     () => ({
-      entitlements,
-      isPro,
-      upgradeToPro,
+      entitlements: ["echonote_pro"],
+      isPro: true,
+      upgradeToPro: () => {},
     }),
-    [entitlements, isPro, upgradeToPro],
+    [],
   );
 
   return (

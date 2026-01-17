@@ -8,20 +8,14 @@ export function sortProviders<T extends Sortable>(
   providers: readonly T[],
 ): T[] {
   return [...providers].sort((a, b) => {
-    if (a.id === "echonote") return -1;
-    if (b.id === "echonote") return 1;
+    if (a.id === "openrouter") return -1;
+    if (b.id === "openrouter") return 1;
 
     if (a.disabled && !b.disabled) return 1;
     if (!a.disabled && b.disabled) return -1;
 
     if (a.id === "custom") return 1;
     if (b.id === "custom") return -1;
-
-    const localOnlyIds = ["ollama", "lmstudio"];
-    const aIsLocalOnly = localOnlyIds.includes(a.id);
-    const bIsLocalOnly = localOnlyIds.includes(b.id);
-    if (aIsLocalOnly && !bIsLocalOnly) return 1;
-    if (!aIsLocalOnly && bIsLocalOnly) return -1;
 
     return a.displayName.localeCompare(b.displayName);
   });

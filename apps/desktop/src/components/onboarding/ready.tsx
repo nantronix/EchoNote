@@ -1,7 +1,6 @@
-import { CheckCircle2Icon } from "lucide-react";
-
 import { commands as sfxCommands } from "@echonote/plugin-sfx";
 import { commands as windowsCommands } from "@echonote/plugin-windows";
+import { CheckCircle2Icon } from "lucide-react";
 
 import { commands } from "../../types/tauri.gen";
 import { OnboardingContainer } from "./shared";

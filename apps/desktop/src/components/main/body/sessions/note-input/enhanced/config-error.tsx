@@ -1,6 +1,5 @@
-import { ArrowRightIcon } from "lucide-react";
-
 import { Button } from "@echonote/ui/components/ui/button";
+import { ArrowRightIcon } from "lucide-react";
 
 import type { LLMConnectionStatus } from "../../../../../../hooks/useLLMConnection";
 import { useTabs } from "../../../../../../store/zustand/tabs";
@@ -38,10 +37,6 @@ function getMessageForStatus(status: LLMConnectionStatus): string {
 
   if (status.status === "pending" && status.reason === "missing_model") {
     return "You need to select a model to summarize this meeting";
-  }
-
-  if (status.status === "error" && status.reason === "unauthenticated") {
-    return "You need to sign in to use EchoNote's language model";
   }
 
   if (status.status === "error" && status.reason === "missing_config") {

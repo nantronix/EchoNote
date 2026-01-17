@@ -1,7 +1,6 @@
+import { Button } from "@echonote/ui/components/ui/button";
 import { ArrowRightIcon, CheckIcon, ChevronLeftIcon } from "lucide-react";
 import type { ReactNode } from "react";
-
-import { Button } from "@echonote/ui/components/ui/button";
 
 export function OnboardingContainer({
   title,

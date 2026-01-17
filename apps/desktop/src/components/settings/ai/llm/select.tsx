@@ -1,6 +1,3 @@
-import { useForm } from "@tanstack/react-form";
-import { useMemo } from "react";
-
 import {
   Select,
   SelectContent,
@@ -9,8 +6,9 @@ import {
   SelectValue,
 } from "@echonote/ui/components/ui/select";
 import { cn } from "@echonote/utils";
+import { useForm } from "@tanstack/react-form";
+import { useMemo } from "react";
 
-import { useAuth } from "../../../../auth";
 import { useBillingAccess } from "../../../../billing";
 import { useConfigValues } from "../../../../config/use-config";
 import * as settings from "../../../../store/tinybase/store/settings";
@@ -19,15 +17,10 @@ import {
   requiresEntitlement,
 } from "../shared/eligibility";
 import { listAnthropicModels } from "../shared/list-anthropic";
-import {
-  type InputModality,
-  type ListModelsResult,
-} from "../shared/list-common";
+import { type ListModelsResult } from "../shared/list-common";
 import { listDeepSeekModels } from "../shared/list-deepseek";
 import { listGoogleModels } from "../shared/list-google";
-import { listLMStudioModels } from "../shared/list-lmstudio";
 import { listMistralModels } from "../shared/list-mistral";
-import { listOllamaModels } from "../shared/list-ollama";
 import { listGenericModels, listOpenAIModels } from "../shared/list-openai";
 import { listOpenRouterModels } from "../shared/list-openrouter";
 import { ModelCombobox } from "../shared/model-combobox";
@@ -96,12 +89,8 @@ export function SelectProviderAndModel() {
           <form.Field
             name="provider"
             listeners={{
-              onChange: ({ value }) => {
-                if (value === "echonote") {
-                  form.setFieldValue("model", "Auto");
-                } else {
-                  form.setFieldValue("model", "");
-                }
+              onChange: () => {
+                form.setFieldValue("model", "");
               },
             }}
           >
@@ -190,7 +179,6 @@ type ProviderStatus = {
 };
 
 function useConfiguredMapping(): Record<string, ProviderStatus> {
-  const auth = useAuth();
   const billing = useBillingAccess();
   const configuredProviders = settings.UI.useResultTable(
     settings.QUERIES.llmProviders,
@@ -211,26 +199,13 @@ function useConfiguredMapping(): Record<string, ProviderStatus> {
 
         const eligible =
           getProviderSelectionBlockers(provider.requirements, {
-            isAuthenticated: !!auth?.session,
+            isAuthenticated: true,
             isPro: billing.isPro,
             config: { base_url: baseUrl, api_key: apiKey },
           }).length === 0;
 
         if (!eligible) {
           return [provider.id, { listModels: undefined, proLocked }];
-        }
-
-        if (provider.id === "echonote") {
-          const result: ListModelsResult = {
-            models: ["Auto"],
-            ignored: [],
-            metadata: {
-              Auto: {
-                input_modalities: ["text", "image"] as InputModality[],
-              },
-            },
-          };
-          return [provider.id, { listModels: async () => result, proLocked }];
         }
 
         let listModelsFunc: () => Promise<ListModelsResult>;
@@ -254,12 +229,6 @@ function useConfiguredMapping(): Record<string, ProviderStatus> {
           case "deepseek":
             listModelsFunc = () => listDeepSeekModels(baseUrl, apiKey);
             break;
-          case "ollama":
-            listModelsFunc = () => listOllamaModels(baseUrl, apiKey);
-            break;
-          case "lmstudio":
-            listModelsFunc = () => listLMStudioModels(baseUrl, apiKey);
-            break;
           case "custom":
             listModelsFunc = () => listGenericModels(baseUrl, apiKey);
             break;
@@ -270,7 +239,7 @@ function useConfiguredMapping(): Record<string, ProviderStatus> {
         return [provider.id, { listModels: listModelsFunc, proLocked }];
       }),
     ) as Record<string, ProviderStatus>;
-  }, [configuredProviders, auth, billing]);
+  }, [configuredProviders, billing]);
 
   return mapping;
 }

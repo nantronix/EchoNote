@@ -1,6 +1,3 @@
-import { AlertCircleIcon, PlusIcon, RefreshCwIcon, XIcon } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { md2json } from "@echonote/tiptap/shared";
@@ -15,6 +12,8 @@ import {
 } from "@echonote/ui/components/ui/scroll-fade";
 import { Spinner } from "@echonote/ui/components/ui/spinner";
 import { cn } from "@echonote/utils";
+import { AlertCircleIcon, PlusIcon, RefreshCwIcon, XIcon } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useAudioPlayer } from "../../../../../contexts/audio-player/provider";
 import { useListener } from "../../../../../contexts/listener";
@@ -673,9 +672,7 @@ function useEnhanceLogic(sessionId: string, enhancedNoteId: string) {
 
   const isConfigError =
     llmStatus.status === "pending" ||
-    (llmStatus.status === "error" &&
-      (llmStatus.reason === "missing_config" ||
-        llmStatus.reason === "unauthenticated"));
+    (llmStatus.status === "error" && llmStatus.reason === "missing_config");
 
   const isIdleWithConfigError = enhanceTask.isIdle && isConfigError;
 

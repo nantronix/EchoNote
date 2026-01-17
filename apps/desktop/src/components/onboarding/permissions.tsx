@@ -1,6 +1,5 @@
-import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
-
 import { cn } from "@echonote/utils";
+import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
 
 import { usePermissions } from "../../hooks/usePermissions";
 import { Route } from "../../routes/app/onboarding/_layout.index";
@@ -87,9 +86,11 @@ export function Permissions({ onNavigate }: StepProps) {
     handleAccessibilityPermissionAction,
   } = usePermissions();
 
+  const isDev = import.meta.env.DEV;
+
   const allPermissionsGranted =
     micPermissionStatus.data === "authorized" &&
-    systemAudioPermissionStatus.data === "authorized" &&
+    (systemAudioPermissionStatus.data === "authorized" || isDev) &&
     accessibilityPermissionStatus.data === "authorized";
 
   const backStep = getBack(search);
@@ -118,9 +119,11 @@ export function Permissions({ onNavigate }: StepProps) {
 
         <PermissionBlock
           name="System audio"
-          status={systemAudioPermissionStatus.data}
+          status={isDev ? "authorized" : systemAudioPermissionStatus.data}
           description={{
-            authorized: "Good to go :)",
+            authorized: isDev
+              ? "Dev mode - permission check skipped"
+              : "Good to go :)",
             unauthorized: "To capture what other people are saying",
           }}
           isPending={systemAudioPermission.isPending}

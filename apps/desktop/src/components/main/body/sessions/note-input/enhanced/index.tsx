@@ -1,6 +1,5 @@
-import { forwardRef } from "react";
-
 import { type TiptapEditor } from "@echonote/tiptap/editor";
+import { forwardRef } from "react";
 
 import { useAITaskTask } from "../../../../../../hooks/useAITaskTask";
 import { useLLMConnectionStatus } from "../../../../../../hooks/useLLMConnection";
@@ -28,9 +27,7 @@ export const Enhanced = forwardRef<
 
   const isConfigError =
     llmStatus.status === "pending" ||
-    (llmStatus.status === "error" &&
-      (llmStatus.reason === "missing_config" ||
-        llmStatus.reason === "unauthenticated"));
+    (llmStatus.status === "error" && llmStatus.reason === "missing_config");
 
   if (status === "idle" && isConfigError && !hasContent) {
     return <ConfigError status={llmStatus} />;

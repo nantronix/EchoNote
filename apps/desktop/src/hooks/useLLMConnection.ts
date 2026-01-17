@@ -2,6 +2,7 @@ import { createAnthropic } from "@ai-sdk/anthropic";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenAI } from "@ai-sdk/openai";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
+import type { AIProviderStorage } from "@echonote/store";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { fetch as tauriFetch } from "@tauri-apps/plugin-http";
 import {
@@ -11,9 +12,6 @@ import {
 } from "ai";
 import { useMemo } from "react";
 
-import type { AIProviderStorage } from "@echonote/store";
-
-import { useAuth } from "../auth";
 import { useBillingAccess } from "../billing";
 import {
   type ProviderId,
@@ -23,9 +21,7 @@ import {
   getProviderSelectionBlockers,
   type ProviderEligibilityContext,
 } from "../components/settings/ai/shared/eligibility";
-import { env } from "../env";
 import * as settings from "../store/tinybase/store/settings";
-import { tracedFetch } from "../utils/traced-fetch";
 
 type LLMConnectionInfo = {
   providerId: ProviderId;
@@ -38,8 +34,6 @@ export type LLMConnectionStatus =
   | { status: "pending"; reason: "missing_provider" }
   | { status: "pending"; reason: "missing_model"; providerId: ProviderId }
   | { status: "error"; reason: "provider_not_found"; providerId: string }
-  | { status: "error"; reason: "unauthenticated"; providerId: "echonote" }
-  | { status: "error"; reason: "not_pro"; providerId: "echonote" }
   | {
       status: "error";
       reason: "missing_config";
@@ -59,7 +53,6 @@ export const useLanguageModel = (): Exclude<LanguageModel, string> | null => {
 };
 
 export const useLLMConnection = (): LLMConnectionResult => {
-  const auth = useAuth();
   const billing = useBillingAccess();
 
   const { current_llm_provider, current_llm_model } = settings.UI.useValues(
@@ -77,16 +70,9 @@ export const useLLMConnection = (): LLMConnectionResult => {
         providerId: current_llm_provider,
         modelId: current_llm_model,
         providerConfig,
-        session: auth?.session,
         isPro: billing.isPro,
       }),
-    [
-      auth,
-      billing.isPro,
-      current_llm_model,
-      current_llm_provider,
-      providerConfig,
-    ],
+    [billing.isPro, current_llm_model, current_llm_provider, providerConfig],
   );
 };
 
@@ -99,16 +85,9 @@ const resolveLLMConnection = (params: {
   providerId: string | undefined;
   modelId: string | undefined;
   providerConfig: AIProviderStorage | undefined;
-  session: { access_token: string } | null | undefined;
   isPro: boolean;
 }): LLMConnectionResult => {
-  const {
-    providerId: rawProviderId,
-    modelId,
-    providerConfig,
-    session,
-    isPro,
-  } = params;
+  const { providerId: rawProviderId, modelId, providerConfig, isPro } = params;
 
   if (!rawProviderId) {
     return {
@@ -146,7 +125,7 @@ const resolveLLMConnection = (params: {
   const apiKey = providerConfig?.api_key?.trim() || "";
 
   const context: ProviderEligibilityContext = {
-    isAuthenticated: !!session,
+    isAuthenticated: true,
     isPro,
     config: { base_url: baseUrl, api_key: apiKey },
   };
@@ -158,18 +137,6 @@ const resolveLLMConnection = (params: {
 
   if (blockers.length > 0) {
     const blocker = blockers[0];
-    if (blocker.code === "requires_auth" && providerId === "echonote") {
-      return {
-        conn: null,
-        status: { status: "error", reason: "unauthenticated", providerId },
-      };
-    }
-    if (blocker.code === "requires_entitlement" && providerId === "echonote") {
-      return {
-        conn: null,
-        status: { status: "error", reason: "not_pro", providerId },
-      };
-    }
     if (blocker.code === "missing_config") {
       return {
         conn: null,
@@ -181,18 +148,6 @@ const resolveLLMConnection = (params: {
         },
       };
     }
-  }
-
-  if (providerId === "echonote" && session) {
-    return {
-      conn: {
-        providerId,
-        modelId,
-        baseUrl: baseUrl ?? new URL("/llm", env.VITE_AI_URL).toString(),
-        apiKey: session.access_token,
-      },
-      status: { status: "success", providerId, isHosted: true },
-    };
   }
 
   return {
@@ -215,19 +170,6 @@ const createLanguageModel = (
   conn: LLMConnectionInfo,
 ): Exclude<LanguageModel, string> => {
   switch (conn.providerId) {
-    case "echonote": {
-      const provider = createOpenAICompatible({
-        fetch: tracedFetch,
-        name: "echonote",
-        baseURL: conn.baseUrl,
-        apiKey: conn.apiKey,
-        headers: {
-          Authorization: `Bearer ${conn.apiKey}`,
-        },
-      });
-      return wrapWithThinkingMiddleware(provider.chatModel(conn.modelId));
-    }
-
     case "anthropic": {
       const provider = createAnthropic({
         fetch: tauriFetch,
@@ -254,7 +196,6 @@ const createLanguageModel = (
         fetch: tauriFetch,
         apiKey: conn.apiKey,
       });
-      // Type cast needed due to @ai-sdk/mistral using @ai-sdk/provider@3.x while @openrouter uses @2.x
       return wrapWithThinkingMiddleware(
         provider(conn.modelId) as Exclude<LanguageModel, string>,
       );
@@ -266,24 +207,6 @@ const createLanguageModel = (
         apiKey: conn.apiKey,
       });
       return wrapWithThinkingMiddleware(provider(conn.modelId));
-    }
-
-    case "ollama": {
-      const ollamaOrigin = new URL(conn.baseUrl.replace(/\/v1\/?$/, "")).origin;
-      const ollamaFetch: typeof fetch = async (input, init) => {
-        const headers = new Headers(init?.headers);
-        headers.set("Origin", ollamaOrigin);
-        return tauriFetch(input as RequestInfo | URL, {
-          ...init,
-          headers,
-        });
-      };
-      const provider = createOpenAICompatible({
-        fetch: ollamaFetch,
-        name: conn.providerId,
-        baseURL: conn.baseUrl,
-      });
-      return wrapWithThinkingMiddleware(provider.chatModel(conn.modelId));
     }
 
     default: {
