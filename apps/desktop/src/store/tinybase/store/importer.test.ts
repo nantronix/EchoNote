@@ -1,9 +1,8 @@
-import { createMergeableStore } from "tinybase/with-schemas";
-import { beforeEach, describe, expect, test, vi } from "vitest";
-
 import { commands as fs2Commands } from "@echonote/plugin-fs2";
 import { commands as settingsCommands } from "@echonote/plugin-settings";
 import { SCHEMA } from "@echonote/store";
+import { createMergeableStore } from "tinybase/with-schemas";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 
 import { importFromJson } from "./importer";
 import type { Store } from "./main";

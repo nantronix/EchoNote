@@ -1,6 +1,5 @@
-import { AlertCircle, Info as InfoIcon, Lightbulb } from "lucide-react";
-
 import { cn } from "@echonote/utils";
+import { AlertCircle, Info as InfoIcon, Lightbulb } from "lucide-react";
 
 interface CalloutProps {
   children: React.ReactNode;

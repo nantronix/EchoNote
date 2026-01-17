@@ -2,10 +2,14 @@ import { useMutation } from "@tanstack/react-query";
 import { save } from "@tauri-apps/plugin-dialog";
 import { FileTextIcon, Loader2Icon } from "lucide-react";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { commands as openerCommands } from "@echonote/plugin-opener2";
-import { commands as pdfCommands, type TranscriptItem } from "@echonote/plugin-pdf";
+import {
+  commands as pdfCommands,
+  type TranscriptItem,
+} from "@echonote/plugin-pdf";
 import { json2md } from "@echonote/tiptap/shared";
 import { DropdownMenuItem } from "@echonote/ui/components/ui/dropdown-menu";
 
@@ -20,6 +24,7 @@ export function ExportPDF({
   sessionId: string;
   currentView: EditorView;
 }) {
+  const { t } = useTranslation();
   const store = main.UI.useStore(main.STORE_ID);
 
   const rawMd = main.UI.useCell(
@@ -143,13 +148,13 @@ export function ExportPDF({
   const getExportLabel = () => {
     switch (currentView.type) {
       case "raw":
-        return "Export Memo to PDF";
+        return t("session.exportMemoToPdf");
       case "enhanced":
-        return "Export Summary to PDF";
+        return t("session.exportSummaryToPdf");
       case "transcript":
-        return "Export Transcript to PDF";
+        return t("session.exportTranscriptToPdf");
       default:
-        return "Export to PDF";
+        return t("session.exportToPdf");
     }
   };
 
@@ -201,7 +206,7 @@ export function ExportPDF({
       className="cursor-pointer"
     >
       {isPending ? <Loader2Icon className="animate-spin" /> : <FileTextIcon />}
-      <span>{isPending ? "Exporting..." : getExportLabel()}</span>
+      <span>{isPending ? t("session.exporting") : getExportLabel()}</span>
     </DropdownMenuItem>
   );
 }

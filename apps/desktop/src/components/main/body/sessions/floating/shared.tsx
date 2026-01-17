@@ -1,5 +1,3 @@
-import { type ComponentProps, type ReactNode } from "react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   Tooltip,
@@ -7,6 +5,7 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { type ComponentProps, type ReactNode } from "react";
 
 export { ActionableTooltipContent } from "../shared";
 

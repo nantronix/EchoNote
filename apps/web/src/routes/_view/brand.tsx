@@ -1,8 +1,3 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Menu, X, XIcon } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-
 import {
   ResizableHandle,
   ResizablePanel,
@@ -10,6 +5,10 @@ import {
 } from "@echonote/ui/components/ui/resizable";
 import { useIsMobile } from "@echonote/ui/hooks/use-mobile";
 import { cn } from "@echonote/utils";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { Menu, X, XIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 import { MockWindow } from "@/components/mock-window";
 

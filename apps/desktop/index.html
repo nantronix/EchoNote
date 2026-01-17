@@ -7,11 +7,33 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Hyprnote</title>
+    <title>EchoNote</title>
     <style>
       html, body, #root {
-        background: transparent !important;
-        background-color: transparent !important;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+      }
+      #initial-loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        background: #ffffff;
+      }
+      #initial-loader .spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid #e5e5e5;
+        border-top-color: #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
     </style>
     <!-- Polyfill __TAURI_INTERNALS__ in iframe context (extension host). See docs/developers/extensions. -->
@@ -35,7 +57,25 @@
     </script>
   </head>
   <body spellcheck="false">
+    <div id="initial-loader">
+      <div class="spinner"></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Hide initial loader once React renders
+      window.addEventListener('DOMContentLoaded', function() {
+        var checkRoot = setInterval(function() {
+          var root = document.getElementById('root');
+          if (root && root.children.length > 0) {
+            var loader = document.getElementById('initial-loader');
+            if (loader) loader.style.display = 'none';
+            clearInterval(checkRoot);
+          }
+        }, 100);
+        // Timeout after 30 seconds
+        setTimeout(function() { clearInterval(checkRoot); }, 30000);
+      });
+    </script>
   </body>
 </html>

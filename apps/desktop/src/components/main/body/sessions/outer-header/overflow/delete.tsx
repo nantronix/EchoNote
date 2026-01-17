@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Loader2Icon, TrashIcon } from "lucide-react";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
@@ -12,6 +13,7 @@ import * as main from "../../../../../../store/tinybase/store/main";
 import { useTabs } from "../../../../../../store/zustand/tabs";
 
 export function DeleteNote({ sessionId }: { sessionId: string }) {
+  const { t } = useTranslation();
   const store = main.UI.useStore(main.STORE_ID);
   const indexes = main.UI.useIndexes(main.STORE_ID);
   const invalidateResource = useTabs((state) => state.invalidateResource);
@@ -37,12 +39,13 @@ export function DeleteNote({ sessionId }: { sessionId: string }) {
       className="text-red-600 hover:bg-red-50 hover:text-red-700 cursor-pointer"
     >
       <TrashIcon />
-      <span>Delete note</span>
+      <span>{t("session.deleteNote")}</span>
     </DropdownMenuItem>
   );
 }
 
 export function DeleteRecording({ sessionId }: { sessionId: string }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
   const { mutate, isPending, isError } = useMutation({
     mutationFn: async () => {
@@ -87,10 +90,10 @@ export function DeleteRecording({ sessionId }: { sessionId: string }) {
       {isPending ? <Loader2Icon className="animate-spin" /> : <TrashIcon />}
       <span>
         {isPending
-          ? "Deleting..."
+          ? t("session.deleting")
           : isError
-            ? "Failed to delete"
-            : "Delete only recording"}
+            ? t("session.failedToDelete")
+            : t("session.deleteOnlyRecording")}
       </span>
     </DropdownMenuItem>
   );

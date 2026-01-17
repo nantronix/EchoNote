@@ -4,7 +4,7 @@
   "importOrder": [
     "^\\./instrument$",
     "<THIRD_PARTY_MODULES>",
-    "^@hypr/(.*)$",
+    "^@echonote/(.*)$",
     "^@/(.*)$",
     "^[./]"
   ],

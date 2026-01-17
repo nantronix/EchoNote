@@ -240,10 +240,22 @@ pub async fn main() {
 
     {
         let app_handle = app.handle().clone();
+        tracing::info!("show_window_on_startup: {}", show_window_on_startup);
         if show_window_on_startup {
-            if app.get_onboarding_needed().unwrap_or(true) {
+            let onboarding_needed = app.get_onboarding_needed().unwrap_or(true);
+            tracing::info!("onboarding_needed: {}", onboarding_needed);
+            if onboarding_needed {
+                tracing::info!("hiding main window");
                 AppWindow::Main.hide(&app_handle).unwrap();
-                AppWindow::Onboarding.show(&app_handle).unwrap();
+                tracing::info!("showing onboarding window");
+                match AppWindow::Onboarding.show(&app_handle) {
+                    Ok(window) => {
+                        tracing::info!("onboarding window shown, url: {:?}", window.url());
+                    }
+                    Err(e) => {
+                        tracing::error!("failed to show onboarding window: {:?}", e);
+                    }
+                }
             } else {
                 AppWindow::Onboarding.destroy(&app_handle).unwrap();
                 AppWindow::Main.show(&app_handle).unwrap();

@@ -1,9 +1,3 @@
-import { Icon } from "@iconify-icon/react";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Mail, Menu, X, XIcon } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
-
 import {
   ResizableHandle,
   ResizablePanel,
@@ -11,6 +5,11 @@ import {
 } from "@echonote/ui/components/ui/resizable";
 import { useIsMobile } from "@echonote/ui/hooks/use-mobile";
 import { cn } from "@echonote/utils";
+import { Icon } from "@iconify-icon/react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { Mail, Menu, X, XIcon } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 import { Image } from "@/components/image";
 import { MockWindow } from "@/components/mock-window";

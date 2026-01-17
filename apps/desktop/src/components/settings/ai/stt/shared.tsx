@@ -1,12 +1,11 @@
-import { Icon } from "@iconify-icon/react";
-import { AssemblyAI, ElevenLabs, Fireworks, OpenAI } from "@lobehub/icons";
-import type { ReactNode } from "react";
-
 import type {
   AmModel,
   SupportedSttModel,
   WhisperModel,
 } from "@echonote/plugin-local-stt";
+import { Icon } from "@iconify-icon/react";
+import { AssemblyAI, ElevenLabs, Fireworks, OpenAI } from "@lobehub/icons";
+import type { ReactNode } from "react";
 
 import { env } from "../../../../env";
 import { localSttQueries } from "../../../../hooks/useLocalSttModel";

@@ -1,6 +1,3 @@
-import { CalendarIcon, MapPinIcon, VideoIcon } from "lucide-react";
-import { forwardRef, useState } from "react";
-
 import { commands as openerCommands } from "@echonote/plugin-opener2";
 import { Button } from "@echonote/ui/components/ui/button";
 import {
@@ -15,6 +12,8 @@ import {
   safeParseDate,
   startOfDay,
 } from "@echonote/utils";
+import { CalendarIcon, MapPinIcon, VideoIcon } from "lucide-react";
+import { forwardRef, useState } from "react";
 
 import { useEvent, useSession } from "../../../../../../hooks/tinybase";
 import * as main from "../../../../../../store/tinybase/store/main";

@@ -1,9 +1,8 @@
+import * as utils from "@echonote/utils";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as jsxRuntime from "react/jsx-runtime";
 import * as tinybaseUiReact from "tinybase/ui-react";
-
-import * as utils from "@echonote/utils";
 
 import { getUiComponentAlias } from "../../../extensions/shared/runtime";
 import * as main from "./store/tinybase/store/main";

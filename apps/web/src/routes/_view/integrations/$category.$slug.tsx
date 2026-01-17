@@ -1,8 +1,7 @@
+import { cn } from "@echonote/utils";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allIntegrations } from "content-collections";
 import { useRef, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { GitHubOpenSource } from "@/components/github-open-source";
 import { SlashSeparator } from "@/components/slash-separator";

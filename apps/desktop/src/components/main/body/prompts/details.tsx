@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
-
 import { commands as templateCommands } from "@echonote/plugin-template";
 import { PromptEditor } from "@echonote/tiptap/prompt";
 import { Button } from "@echonote/ui/components/ui/button";
+import { useCallback, useEffect, useState } from "react";
 
 import * as main from "../../../../store/tinybase/store/main";
 import {

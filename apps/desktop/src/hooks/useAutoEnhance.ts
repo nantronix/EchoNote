@@ -1,8 +1,7 @@
-import { usePrevious } from "@uidotdev/usehooks";
-import { useCallback, useEffect, useRef, useState } from "react";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { md2json } from "@echonote/tiptap/shared";
+import { usePrevious } from "@uidotdev/usehooks";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useListener } from "../contexts/listener";
 import * as main from "../store/tinybase/store/main";

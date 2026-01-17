@@ -1,12 +1,11 @@
-import { Check, Copy } from "lucide-react";
-import { type ComponentPropsWithoutRef, useRef, useState } from "react";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
+import { Check, Copy } from "lucide-react";
+import { type ComponentPropsWithoutRef, useRef, useState } from "react";
 
 export function CodeBlock({
   children,

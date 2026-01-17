@@ -1,12 +1,11 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { createFileRoute } from "@tanstack/react-router";
-import { Play } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-
 import NoteEditor, { type JSONContent } from "@echonote/tiptap/editor";
 import { EMPTY_TIPTAP_DOC } from "@echonote/tiptap/shared";
 import "@echonote/tiptap/styles.css";
 import { cn } from "@echonote/utils";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { createFileRoute } from "@tanstack/react-router";
+import { Play } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   FileInfo,

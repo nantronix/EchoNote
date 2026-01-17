@@ -1,10 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { Blocks, FolderOpen, RefreshCw, Search, X } from "lucide-react";
-import { useMemo, useState } from "react";
-
 import type { ExtensionInfo } from "@echonote/plugin-extensions";
 import { Button } from "@echonote/ui/components/ui/button";
 import { cn } from "@echonote/utils";
+import { useQuery } from "@tanstack/react-query";
+import { Blocks, FolderOpen, RefreshCw, Search, X } from "lucide-react";
+import { useMemo, useState } from "react";
 
 import {
   getExtensionsDir,

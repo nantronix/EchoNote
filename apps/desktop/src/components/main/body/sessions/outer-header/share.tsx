@@ -1,11 +1,10 @@
-import { Share2 } from "lucide-react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
+import { Share2 } from "lucide-react";
 
 export function ShareButton(_: { sessionId: string }) {
   return (

@@ -1,7 +1,6 @@
-import { AlertCircle, CheckCircle, Download, RefreshCw, X } from "lucide-react";
-
 import { Spinner } from "@echonote/ui/components/ui/spinner";
 import { cn } from "@echonote/utils";
+import { AlertCircle, CheckCircle, Download, RefreshCw, X } from "lucide-react";
 
 import { MenuItem } from "../shared";
 import { useOTA } from "./task";

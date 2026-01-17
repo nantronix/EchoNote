@@ -1,9 +1,8 @@
-import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
-import { useState } from "react";
-
 import { type PermissionStatus } from "@echonote/plugin-permissions";
 import { Button } from "@echonote/ui/components/ui/button";
 import { cn } from "@echonote/utils";
+import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
+import { useState } from "react";
 
 function ActionLink({
   onClick,

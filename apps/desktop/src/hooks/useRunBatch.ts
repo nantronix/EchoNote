@@ -1,6 +1,5 @@
-import { useCallback, useRef } from "react";
-
 import type { BatchParams } from "@echonote/plugin-listener2";
+import { useCallback, useRef } from "react";
 
 import { useConfigValue } from "../config/use-config";
 import { useListener } from "../contexts/listener";

@@ -1,5 +1,6 @@
 import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import type { PermissionStatus } from "@echonote/plugin-permissions";
 import { Button } from "@echonote/ui/components/ui/button";
@@ -48,6 +49,7 @@ function PermissionRow({
   onReset: () => void;
   onOpen: () => void;
 }) {
+  const { t } = useTranslation();
   const [showActions, setShowActions] = useState(false);
   const isAuthorized = status === "authorized";
   const isDenied = status === "denied";
@@ -81,23 +83,23 @@ function PermissionRow({
                 onClick={() => setShowActions(true)}
                 className="underline hover:text-neutral-900 transition-colors"
               >
-                Having trouble?
+                {t("settings.general.permissions.havingTrouble")}
               </button>
             </div>
           ) : (
             <div>
-              You can{" "}
+              {t("settings.general.permissions.youCan")}{" "}
               <ActionLink onClick={onRequest} disabled={isPending}>
-                Request,
+                {t("settings.general.permissions.request")}
               </ActionLink>{" "}
               <ActionLink onClick={onReset} disabled={isPending}>
-                Reset
+                {t("settings.general.permissions.resetWord")}
               </ActionLink>{" "}
-              or{" "}
+              {t("settings.general.permissions.or")}{" "}
               <ActionLink onClick={onOpen} disabled={isPending}>
-                Open
+                {t("settings.general.permissions.openPanel")}
               </ActionLink>{" "}
-              permission panel.
+              {t("settings.general.permissions.permissionPanel")}
             </div>
           )}
         </div>
@@ -128,17 +130,20 @@ function PermissionRow({
 }
 
 export function Permissions() {
+  const { t } = useTranslation();
   const mic = usePermission("microphone");
   const systemAudio = usePermission("systemAudio");
   const accessibility = usePermission("accessibility");
 
   return (
     <div>
-      <h2 className="font-semibold font-serif mb-4">Permissions</h2>
+      <h2 className="font-semibold font-serif mb-4">
+        {t("settings.general.permissions.title")}
+      </h2>
       <div className="space-y-4">
         <PermissionRow
-          title="Microphone"
-          description="Required to record your voice during meetings and calls"
+          title={t("settings.general.permissions.microphone")}
+          description={t("settings.general.permissions.microphoneDescription")}
           status={mic.status}
           isPending={mic.isPending}
           onRequest={mic.request}
@@ -146,8 +151,8 @@ export function Permissions() {
           onOpen={mic.open}
         />
         <PermissionRow
-          title="System audio"
-          description="Required to capture other participants' voices in meetings"
+          title={t("settings.general.permissions.systemAudio")}
+          description={t("settings.general.permissions.systemAudioDescription")}
           status={systemAudio.status}
           isPending={systemAudio.isPending}
           onRequest={systemAudio.request}
@@ -155,8 +160,10 @@ export function Permissions() {
           onOpen={systemAudio.open}
         />
         <PermissionRow
-          title="Accessibility"
-          description="Required to detect meeting apps and sync mute status"
+          title={t("settings.general.permissions.accessibility")}
+          description={t(
+            "settings.general.permissions.accessibilityDescription",
+          )}
           status={accessibility.status}
           isPending={accessibility.isPending}
           onRequest={accessibility.request}

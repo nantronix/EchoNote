@@ -1,5 +1,6 @@
 import { cn } from "@echonote/utils";
 import { AlertCircleIcon, ArrowRightIcon, CheckIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { usePermissions } from "../../hooks/usePermissions";
 import { Route } from "../../routes/app/onboarding/_layout.index";
@@ -73,6 +74,7 @@ function PermissionBlock({
 }
 
 export function Permissions({ onNavigate }: StepProps) {
+  const { t } = useTranslation();
   const search = Route.useSearch();
   const {
     micPermissionStatus,
@@ -97,7 +99,7 @@ export function Permissions({ onNavigate }: StepProps) {
 
   return (
     <OnboardingContainer
-      title="Permissions needed for best experience"
+      title={t("onboarding.permissions.title")}
       onBack={
         backStep
           ? () =>
@@ -107,35 +109,35 @@ export function Permissions({ onNavigate }: StepProps) {
     >
       <div className="flex flex-col gap-4">
         <PermissionBlock
-          name="Microphone"
+          name={t("onboarding.permissions.microphone")}
           status={micPermissionStatus.data}
           description={{
-            authorized: "Good to go :)",
-            unauthorized: "To capture your voice",
+            authorized: t("onboarding.permissions.microphoneAuthorized"),
+            unauthorized: t("onboarding.permissions.microphoneUnauthorized"),
           }}
           isPending={micPermission.isPending}
           onAction={handleMicPermissionAction}
         />
 
         <PermissionBlock
-          name="System audio"
+          name={t("onboarding.permissions.systemAudio")}
           status={isDev ? "authorized" : systemAudioPermissionStatus.data}
           description={{
             authorized: isDev
-              ? "Dev mode - permission check skipped"
-              : "Good to go :)",
-            unauthorized: "To capture what other people are saying",
+              ? t("onboarding.permissions.systemAudioDevMode")
+              : t("onboarding.permissions.systemAudioAuthorized"),
+            unauthorized: t("onboarding.permissions.systemAudioUnauthorized"),
           }}
           isPending={systemAudioPermission.isPending}
           onAction={handleSystemAudioPermissionAction}
         />
 
         <PermissionBlock
-          name="Accessibility"
+          name={t("onboarding.permissions.accessibility")}
           status={accessibilityPermissionStatus.data}
           description={{
-            authorized: "Good to go :)",
-            unauthorized: "To sync mic inputs & mute from meetings",
+            authorized: t("onboarding.permissions.accessibilityAuthorized"),
+            unauthorized: t("onboarding.permissions.accessibilityUnauthorized"),
           }}
           isPending={accessibilityPermission.isPending}
           onAction={handleAccessibilityPermissionAction}
@@ -153,8 +155,8 @@ export function Permissions({ onNavigate }: StepProps) {
         ])}
       >
         {allPermissionsGranted
-          ? "Continue"
-          : "Need all permissions to continue"}
+          ? t("common.continue")
+          : t("onboarding.permissions.needAllPermissions")}
       </button>
     </OnboardingContainer>
   );

@@ -1,7 +1,3 @@
-import { useHover } from "@uidotdev/usehooks";
-import { MicOff } from "lucide-react";
-import { useCallback, useEffect, useRef } from "react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   Tooltip,
@@ -9,6 +5,9 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { useHover } from "@uidotdev/usehooks";
+import { MicOff } from "lucide-react";
+import { useCallback, useEffect, useRef } from "react";
 
 import { useListener } from "../../../../../contexts/listener";
 import { useStartListening } from "../../../../../hooks/useStartListening";

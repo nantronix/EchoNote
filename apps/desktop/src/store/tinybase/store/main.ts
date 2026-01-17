@@ -1,3 +1,5 @@
+import { SCHEMA, type Schemas } from "@echonote/store";
+import { format } from "@echonote/utils";
 import { createBroadcastChannelSynchronizer } from "tinybase/synchronizers/synchronizer-broadcast-channel/with-schemas";
 import * as _UI from "tinybase/ui-react/with-schemas";
 import {
@@ -9,9 +11,6 @@ import {
   createRelationships,
   type MergeableStore,
 } from "tinybase/with-schemas";
-
-import { SCHEMA, type Schemas } from "@echonote/store";
-import { format } from "@echonote/utils";
 
 import { useMainPersisters } from "./persisters";
 

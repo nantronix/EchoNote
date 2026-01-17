@@ -1,11 +1,10 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Download } from "lucide-react";
 import { useState } from "react";
 import semver from "semver";
-
-import { cn } from "@echonote/utils";
 
 import {
   type ChangelogWithMeta,

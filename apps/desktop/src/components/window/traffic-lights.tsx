@@ -1,6 +1,5 @@
-import { getCurrentWebviewWindow } from "@tauri-apps/api/webviewWindow";
-
 import { cn } from "@echonote/utils";
+import { getCurrentWebviewWindow } from "@tauri-apps/api/webviewWindow";
 
 export function TrafficLights({ className }: { className?: string }) {
   const win = getCurrentWebviewWindow();

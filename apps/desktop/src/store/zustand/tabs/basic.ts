@@ -1,6 +1,5 @@
-import type { StoreApi } from "zustand";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
+import type { StoreApi } from "zustand";
 
 import { id } from "../../../utils";
 import { listenerStore } from "../listener/instance";

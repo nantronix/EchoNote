@@ -1,11 +1,10 @@
+import { commands, events } from "@echonote/plugin-updater2";
+import { Button } from "@echonote/ui/components/ui/button";
+import { cn } from "@echonote/utils";
 import { useQuery } from "@tanstack/react-query";
 import { type UnlistenFn } from "@tauri-apps/api/event";
 import { relaunch } from "@tauri-apps/plugin-process";
 import { useCallback, useEffect, useState } from "react";
-
-import { commands, events } from "@echonote/plugin-updater2";
-import { Button } from "@echonote/ui/components/ui/button";
-import { cn } from "@echonote/utils";
 
 export function Update() {
   const { show, version } = useUpdate();

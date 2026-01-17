@@ -30,10 +30,10 @@ impl<'a, R: tauri::Runtime, M: tauri::Manager<R>> Settings<'a, R, M> {
             .data_dir()
             .map_err(|e| crate::Error::Path(e.to_string()))?;
 
-        let app_folder = if cfg!(debug_assertions) || bundle_id == "com.hyprnote.staging" {
+        let app_folder = if cfg!(debug_assertions) || bundle_id == "com.echonote.staging" {
             bundle_id
         } else {
-            "hyprnote"
+            "echonote"
         };
 
         let path = data_dir.join(app_folder);

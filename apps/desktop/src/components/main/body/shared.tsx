@@ -1,9 +1,8 @@
-import { Pin, X } from "lucide-react";
-import { useState } from "react";
-
 import { Kbd } from "@echonote/ui/components/ui/kbd";
 import { Spinner } from "@echonote/ui/components/ui/spinner";
 import { cn } from "@echonote/utils";
+import { Pin, X } from "lucide-react";
+import { useState } from "react";
 
 import { useCmdKeyPressed } from "../../../hooks/useCmdKeyPressed";
 import { type Tab } from "../../../store/zustand/tabs";

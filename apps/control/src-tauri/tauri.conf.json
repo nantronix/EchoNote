@@ -1,12 +1,12 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Hyprnote Control Dev",
-  "mainBinaryName": "Hyprnote Control Dev",
-  "identifier": "com.hyprnote.control.dev",
+  "productName": "EchoNote Control Dev",
+  "mainBinaryName": "EchoNote Control Dev",
+  "identifier": "com.echonote.control.dev",
   "build": {
-    "beforeDevCommand": "pnpm -F @hypr/control dev",
+    "beforeDevCommand": "pnpm -F @echonote/control dev",
     "devUrl": "http://localhost:1424",
-    "beforeBuildCommand": "pnpm -F @hypr/control build",
+    "beforeBuildCommand": "pnpm -F @echonote/control build",
     "frontendDist": "../dist"
   },
   "app": {
@@ -18,7 +18,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Hyprnote Control",
+        "title": "EchoNote Control",
         "width": 350,
         "height": 400,
         "resizable": false,

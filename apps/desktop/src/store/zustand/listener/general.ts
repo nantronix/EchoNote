@@ -1,8 +1,3 @@
-import { getIdentifier } from "@tauri-apps/api/app";
-import { Effect, Exit } from "effect";
-import { create as mutate } from "mutative";
-import type { StoreApi } from "zustand";
-
 import { commands as detectCommands } from "@echonote/plugin-detect";
 import { commands as hooksCommands } from "@echonote/plugin-hooks";
 import { commands as iconCommands } from "@echonote/plugin-icon";
@@ -22,6 +17,10 @@ import {
   events as listener2Events,
 } from "@echonote/plugin-listener2";
 import { commands as settingsCommands } from "@echonote/plugin-settings";
+import { getIdentifier } from "@tauri-apps/api/app";
+import { Effect, Exit } from "effect";
+import { create as mutate } from "mutative";
+import type { StoreApi } from "zustand";
 
 import { fromResult } from "../../../effect";
 import { buildSessionPath } from "../../tinybase/persister/shared/paths";

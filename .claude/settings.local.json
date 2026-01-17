@@ -17,7 +17,30 @@
       "Bash(xargs kill -9)",
       "Bash(pkill:*)",
       "Bash(git remote set-url:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(pnpm exec dprint:*)",
+      "Bash(pnpm -F desktop typecheck:*)",
+      "Bash(cargo test:*)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "Bash(pnpm -r typecheck:*)",
+      "Bash(pnpm -F desktop add:*)",
+      "Bash(identify:*)",
+      "Bash(file:*)",
+      "Bash(convert:*)",
+      "Bash(magick:*)",
+      "Bash(sips --help:*)",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(iconutil --help:*)",
+      "Bash(ls:*)",
+      "Bash(kill:*)",
+      "Bash(brew list:*)",
+      "Bash(pnpm tauri icon:*)",
+      "Bash(cargo metadata:*)",
+      "Bash(./node_modules/.bin/dprint fmt:*)",
+      "Bash(pnpm dlx dprint:*)"
     ]
   }
 }

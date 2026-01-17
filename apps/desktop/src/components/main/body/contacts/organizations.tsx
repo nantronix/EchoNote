@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { Building2, CornerDownLeft, User } from "lucide-react";
 import React, { useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { ColumnHeader, type SortOption } from "./shared";

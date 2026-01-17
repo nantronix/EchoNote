@@ -1,6 +1,5 @@
-import { CheckIcon, SparklesIcon } from "lucide-react";
-
 import { cn } from "@echonote/utils";
+import { CheckIcon, SparklesIcon } from "lucide-react";
 
 import * as main from "../../../../store/tinybase/store/main";
 import {

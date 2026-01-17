@@ -2,12 +2,12 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-app_hyprnote=""
+app_echonote=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
-    --app-hyprnote)
-      app_hyprnote="$2"
+    --app-echonote)
+      app_echonote="$2"
       shift 2
       ;;
     *)
@@ -16,6 +16,6 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ -n "$app_hyprnote" ]]; then
-  "$SCRIPT_DIR/yabai_impl.sh" --bundle-id "$app_hyprnote" --position left
+if [[ -n "$app_echonote" ]]; then
+  "$SCRIPT_DIR/yabai_impl.sh" --bundle-id "$app_echonote" --position left
 fi

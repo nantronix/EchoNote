@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { type ReactNode, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-
-import { cn } from "@echonote/utils";
 
 import { useShell } from "../../../../../contexts/shell";
 import type { Tab } from "../../../../../store/zustand/tabs/schema";

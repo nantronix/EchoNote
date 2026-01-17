@@ -1,7 +1,6 @@
-import { faker } from "@faker-js/faker/locale/en";
-
 import type { SessionStorage } from "@echonote/store";
 import { md2json } from "@echonote/tiptap/shared";
+import { faker } from "@faker-js/faker/locale/en";
 
 import { DEFAULT_USER_ID, id } from "../../../../utils";
 

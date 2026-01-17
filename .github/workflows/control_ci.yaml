@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/pnpm_install
-      - run: pnpm -F @hypr/control typecheck
+      - run: pnpm -F @echonote/control typecheck
       - uses: ./.github/actions/install_desktop_deps
         with:
           target: macos

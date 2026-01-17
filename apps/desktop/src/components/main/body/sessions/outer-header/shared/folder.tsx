@@ -1,6 +1,3 @@
-import { FolderIcon } from "lucide-react";
-import { type ReactNode, useCallback, useMemo, useState } from "react";
-
 import {
   Command,
   CommandEmpty,
@@ -15,6 +12,8 @@ import {
   DropdownMenuSubContent,
   DropdownMenuTrigger,
 } from "@echonote/ui/components/ui/dropdown-menu";
+import { FolderIcon } from "lucide-react";
+import { type ReactNode, useCallback, useMemo, useState } from "react";
 
 import { sessionOps } from "../../../../../../store/tinybase/persister/session/ops";
 import * as main from "../../../../../../store/tinybase/store/main";

@@ -6,6 +6,7 @@ import {
   SquareIcon,
 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import type { SlashCommandConfig, TiptapEditor } from "@echonote/tiptap/chat";
@@ -38,6 +39,7 @@ export function ChatMessageInput({
   isStreaming?: boolean;
   onStop?: () => void;
 }) {
+  const { t } = useTranslation();
   const editorRef = useRef<{ editor: TiptapEditor | null }>(null);
   const [hasContent, setHasContent] = useState(false);
   const { chat } = useShell();
@@ -161,7 +163,7 @@ export function ChatMessageInput({
     <Container>
       {attachedSession && (
         <div className="px-3 pt-2 text-xs text-neutral-500 truncate">
-          Attached: {attachedSession.title || "Untitled"}
+          {t("chat.attached")} {attachedSession.title || t("session.untitled")}
         </div>
       )}
       <div className="flex flex-col p-2">
@@ -190,7 +192,7 @@ export function ChatMessageInput({
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="top">
-                <span>Coming soon</span>
+                <span>{t("chat.comingSoon")}</span>
               </TooltipContent>
             </Tooltip>
             <Tooltip>
@@ -206,7 +208,7 @@ export function ChatMessageInput({
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="top">
-                <span>Coming soon</span>
+                <span>{t("chat.comingSoon")}</span>
               </TooltipContent>
             </Tooltip>
           </div>
@@ -225,7 +227,7 @@ export function ChatMessageInput({
                 </Button>
               </TooltipTrigger>
               <TooltipContent side="top">
-                <span>Coming soon</span>
+                <span>{t("chat.comingSoon")}</span>
               </TooltipContent>
             </Tooltip>
             {isStreaming ? (
@@ -253,7 +255,7 @@ export function ChatMessageInput({
       </div>
       {hasContent && (
         <span className="absolute bottom-1.5 right-5 text-[8px] text-neutral-400">
-          Shift + Enter to add a new line
+          {t("chat.shiftEnterHint")}
         </span>
       )}
     </Container>

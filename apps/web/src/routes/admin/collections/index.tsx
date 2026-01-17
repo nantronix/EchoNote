@@ -1,4 +1,23 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import BlogEditor from "@echonote/tiptap/blog-editor";
+import "@echonote/tiptap/styles.css";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@echonote/ui/components/ui/dialog";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@echonote/ui/components/ui/resizable";
+import {
+  ScrollFadeOverlay,
+  useScrollFade,
+} from "@echonote/ui/components/ui/scroll-fade";
+import { Spinner } from "@echonote/ui/components/ui/spinner";
+import { cn } from "@echonote/utils";
 import { useMutation } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { allArticles } from "content-collections";
@@ -38,26 +57,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-
-import BlogEditor from "@echonote/tiptap/blog-editor";
-import "@echonote/tiptap/styles.css";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@echonote/ui/components/ui/dialog";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@echonote/ui/components/ui/resizable";
-import {
-  ScrollFadeOverlay,
-  useScrollFade,
-} from "@echonote/ui/components/ui/scroll-fade";
-import { Spinner } from "@echonote/ui/components/ui/spinner";
-import { cn } from "@echonote/utils";
 
 import { defaultMDXComponents } from "@/components/mdx";
 

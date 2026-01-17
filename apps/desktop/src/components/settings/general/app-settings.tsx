@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Switch } from "@echonote/ui/components/ui/switch";
 
 interface SettingItem {
@@ -20,9 +22,10 @@ export function AppSettingsView({
   saveRecordings,
   telemetryConsent,
 }: AppSettingsViewProps) {
+  const { t } = useTranslation();
   return (
     <div>
-      <h2 className="font-semibold font-serif mb-4">App</h2>
+      <h2 className="font-semibold font-serif mb-4">{t("sidebar.settings")}</h2>
       <div className="space-y-4">
         <SettingRow
           title={autostart.title}

@@ -1,5 +1,3 @@
-import { faker } from "@faker-js/faker/locale/en";
-
 import type { AppleCalendar } from "@echonote/plugin-apple-calendar";
 import type {
   Calendar,
@@ -17,6 +15,7 @@ import type {
   TemplateStorage,
   TranscriptStorage,
 } from "@echonote/store";
+import { faker } from "@faker-js/faker/locale/en";
 
 import { createCalendar, createCalendarFromFixture } from "./calendar";
 import { createChatGroup, createChatMessage } from "./chat";

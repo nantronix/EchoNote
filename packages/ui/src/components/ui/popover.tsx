@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import * as React from "react";
-
-import { cn } from "@echonote/utils";
 
 const Popover = PopoverPrimitive.Root;
 const PopoverTrigger = PopoverPrimitive.Trigger;

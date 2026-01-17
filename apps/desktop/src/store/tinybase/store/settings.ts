@@ -1,3 +1,4 @@
+import { getCurrentWebviewWindowLabel } from "@echonote/plugin-windows";
 import { useEffect } from "react";
 import { createBroadcastChannelSynchronizer } from "tinybase/synchronizers/synchronizer-broadcast-channel/with-schemas";
 import * as _UI from "tinybase/ui-react/with-schemas";
@@ -8,8 +9,6 @@ import {
   type TablesSchema,
   type ValuesSchema,
 } from "tinybase/with-schemas";
-
-import { getCurrentWebviewWindowLabel } from "@echonote/plugin-windows";
 
 import { useSettingsPersister } from "../persister/settings";
 import { registerSaveHandler } from "./save";

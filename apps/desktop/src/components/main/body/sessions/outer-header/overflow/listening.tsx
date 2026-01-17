@@ -1,4 +1,5 @@
 import { MicIcon, MicOffIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { DropdownMenuItem } from "@echonote/ui/components/ui/dropdown-menu";
 
@@ -6,6 +7,7 @@ import { useListener } from "../../../../../../contexts/listener";
 import { useStartListening } from "../../../../../../hooks/useStartListening";
 
 export function Listening({ sessionId }: { sessionId: string }) {
+  const { t } = useTranslation();
   const { mode, stop } = useListener((state) => ({
     mode: state.getSessionMode(sessionId),
     stop: state.stop,
@@ -36,10 +38,10 @@ export function Listening({ sessionId }: { sessionId: string }) {
       {isListening ? <MicOffIcon /> : <MicIcon />}
       <span>
         {isBatching
-          ? "Batch processing"
+          ? t("session.batchProcessing")
           : isListening
-            ? "Stop listening"
-            : "Start listening"}
+            ? t("session.stopListening")
+            : t("session.startListening")}
       </span>
     </DropdownMenuItem>
   );

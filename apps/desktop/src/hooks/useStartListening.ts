@@ -1,6 +1,5 @@
-import { useCallback } from "react";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
+import { useCallback } from "react";
 
 import { useConfigValue } from "../config/use-config";
 import { useListener } from "../contexts/listener";

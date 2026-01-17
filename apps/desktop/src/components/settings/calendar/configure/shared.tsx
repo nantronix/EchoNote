@@ -1,6 +1,5 @@
-import { CalendarOffIcon } from "lucide-react";
-
 import { Switch } from "@echonote/ui/components/ui/switch";
+import { CalendarOffIcon } from "lucide-react";
 
 export interface CalendarItem {
   id: string;

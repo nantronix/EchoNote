@@ -1,3 +1,9 @@
+import {
+  commands as localSttCommands,
+  events as localSttEvents,
+  type ServerStatus,
+  type SupportedSttModel,
+} from "@echonote/plugin-local-stt";
 import { useQuery } from "@tanstack/react-query";
 import {
   createContext,
@@ -7,13 +13,6 @@ import {
   useMemo,
   useState,
 } from "react";
-
-import {
-  commands as localSttCommands,
-  events as localSttEvents,
-  type ServerStatus,
-  type SupportedSttModel,
-} from "@echonote/plugin-local-stt";
 
 import type { DownloadProgress } from "../components/main/sidebar/toast/types";
 import { useConfigValues } from "../config/use-config";

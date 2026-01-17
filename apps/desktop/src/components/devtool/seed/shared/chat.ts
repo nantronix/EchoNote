@@ -1,6 +1,5 @@
-import { faker } from "@faker-js/faker/locale/en";
-
 import type { ChatGroup, ChatMessageStorage } from "@echonote/store";
+import { faker } from "@faker-js/faker/locale/en";
 
 import { DEFAULT_USER_ID, id } from "../../../../utils";
 

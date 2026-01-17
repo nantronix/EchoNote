@@ -1,8 +1,7 @@
+import { cn } from "@echonote/utils";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
-
-import { cn } from "@echonote/utils";
 
 const sliderVariants = cva(
   "relative flex w-full touch-none select-none items-center",

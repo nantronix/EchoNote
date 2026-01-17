@@ -1,3 +1,9 @@
+import { Button } from "@echonote/ui/components/ui/button";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@echonote/ui/components/ui/resizable";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { AlertTriangleIcon, BlocksIcon, PuzzleIcon } from "lucide-react";
 import {
@@ -10,13 +16,6 @@ import {
 } from "react";
 import type { MergeableStore } from "tinybase";
 import { useStores } from "tinybase/ui-react";
-
-import { Button } from "@echonote/ui/components/ui/button";
-import {
-  ResizableHandle,
-  ResizablePanel,
-  ResizablePanelGroup,
-} from "@echonote/ui/components/ui/resizable";
 
 import { createIframeSynchronizer } from "../../../../store/tinybase/store/iframe-sync";
 import { type Store, STORE_ID } from "../../../../store/tinybase/store/main";

@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-
 import { events as deeplink2Events } from "@echonote/plugin-deeplink2";
+import { useEffect } from "react";
 
 import { useAuth } from "../auth";
 

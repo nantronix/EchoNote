@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { type SearchGroup } from "../../../../contexts/search/ui";
 import { SearchResultItem } from "./item";

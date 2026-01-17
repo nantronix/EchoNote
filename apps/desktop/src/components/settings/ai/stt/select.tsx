@@ -1,9 +1,3 @@
-import { useForm } from "@tanstack/react-form";
-import { useQueries, useQuery } from "@tanstack/react-query";
-import { arch } from "@tauri-apps/plugin-os";
-import { Check, Loader2 } from "lucide-react";
-import { useEffect } from "react";
-
 import { commands as listenerCommands } from "@echonote/plugin-listener";
 import type { SupportedSttModel } from "@echonote/plugin-local-stt";
 import type { AIProviderStorage } from "@echonote/store";
@@ -16,6 +10,11 @@ import {
   SelectValue,
 } from "@echonote/ui/components/ui/select";
 import { cn } from "@echonote/utils";
+import { useForm } from "@tanstack/react-form";
+import { useQueries, useQuery } from "@tanstack/react-query";
+import { arch } from "@tauri-apps/plugin-os";
+import { Check, Loader2 } from "lucide-react";
+import { useEffect } from "react";
 
 import { useBillingAccess } from "../../../../billing";
 import { useConfigValues } from "../../../../config/use-config";

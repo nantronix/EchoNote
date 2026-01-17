@@ -1,9 +1,8 @@
 "use client";
 
+import { cn } from "@echonote/utils";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
-
-import { cn } from "@echonote/utils";
 
 interface AccordionProps {
   title: string;

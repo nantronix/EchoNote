@@ -1,5 +1,3 @@
-import { forwardRef, useCallback, useEffect, useMemo, useRef } from "react";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import NoteEditor, {
   type JSONContent,
@@ -10,6 +8,7 @@ import {
   isValidTiptapContent,
   type PlaceholderFunction,
 } from "@echonote/tiptap/shared";
+import { forwardRef, useCallback, useEffect, useMemo, useRef } from "react";
 
 import * as main from "../../../../../store/tinybase/store/main";
 

@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { ChevronRight, Loader2 } from "lucide-react";
 import { type ReactNode } from "react";
-
-import { cn } from "@echonote/utils";
 
 export function MessageContainer({
   align = "start",

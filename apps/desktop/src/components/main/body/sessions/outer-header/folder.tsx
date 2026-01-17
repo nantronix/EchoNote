@@ -1,5 +1,3 @@
-import { FolderIcon } from "lucide-react";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,6 +7,7 @@ import {
   BreadcrumbSeparator,
 } from "@echonote/ui/components/ui/breadcrumb";
 import { Button } from "@echonote/ui/components/ui/button";
+import { FolderIcon } from "lucide-react";
 
 import * as main from "../../../../../store/tinybase/store/main";
 import { useTabs } from "../../../../../store/zustand/tabs";

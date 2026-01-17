@@ -1,3 +1,12 @@
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@echonote/ui/components/ui/command";
+import { cn } from "@echonote/utils";
 import { useNavigate } from "@tanstack/react-router";
 import { FileText, Search as SearchIcon } from "lucide-react";
 import {
@@ -9,16 +18,6 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@echonote/ui/components/ui/command";
-import { cn } from "@echonote/utils";
 
 function SearchKbd({ children }: { children: React.ReactNode }) {
   return (

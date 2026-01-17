@@ -1,6 +1,5 @@
-import { sep } from "@tauri-apps/api/path";
-
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
+import { sep } from "@tauri-apps/api/path";
 
 import {
   SESSION_META_FILE,

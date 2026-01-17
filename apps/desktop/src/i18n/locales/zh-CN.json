@@ -1,0 +1,453 @@
+{
+  "common": {
+    "continue": "继续",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一步",
+    "confirm": "确认",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "search": "搜索",
+    "settings": "设置",
+    "advanced": "高级",
+    "disconnect": "断开连接",
+    "reconnect": "重新连接",
+    "reconnecting": "正在重新连接...",
+    "add": "添加",
+    "remove": "移除",
+    "copy": "复制",
+    "copied": "已复制！",
+    "done": "完成",
+    "open": "打开",
+    "openInNewTab": "在新标签页中打开",
+    "refresh": "刷新",
+    "retry": "重试",
+    "select": "选择",
+    "selectAll": "全选",
+    "none": "无",
+    "all": "全部",
+    "yes": "是",
+    "no": "否",
+    "ok": "确定",
+    "apply": "应用",
+    "reset": "重置",
+    "clear": "清除",
+    "unknown": "未知",
+    "noResults": "未找到结果",
+    "emptyState": "暂无内容"
+  },
+  "app": {
+    "name": "EchoNote",
+    "tagline": "让对话留在你身边"
+  },
+  "onboarding": {
+    "welcome": {
+      "getStarted": "开始使用"
+    },
+    "permissions": {
+      "title": "需要授权以获得最佳体验",
+      "microphone": "麦克风",
+      "microphoneAuthorized": "已授权 :)",
+      "microphoneUnauthorized": "用于捕捉您的声音",
+      "systemAudio": "系统音频",
+      "systemAudioAuthorized": "已授权 :)",
+      "systemAudioDevMode": "开发模式 - 已跳过权限检查",
+      "systemAudioUnauthorized": "用于捕捉他人的声音",
+      "accessibility": "辅助功能",
+      "accessibilityAuthorized": "已授权 :)",
+      "accessibilityUnauthorized": "用于同步麦克风输入和会议静音",
+      "needAllPermissions": "需要所有权限才能继续"
+    },
+    "configureNotice": {
+      "title": "需要配置 AI 模型以获得最佳体验",
+      "sttModel": "语音转文字模型",
+      "sttDescription": "Deepgram、AssemblyAI 等",
+      "llmModel": "语言模型",
+      "llmDescription": "OpenAI、OpenRouter 等",
+      "required": "必需",
+      "optional": "可选",
+      "configureInSettings": "您可以在设置完成后在设置中配置这些。"
+    },
+    "ready": {
+      "title": "一切就绪！",
+      "description": "所有配置已完成，准备开始",
+      "getStarted": "开始使用"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "general": {
+      "title": "通用",
+      "account": {
+        "title": "本地模式",
+        "description": "EchoNote 正在本地模式下运行。所有数据都存储在您的设备上。"
+      },
+      "app": {
+        "autostart": {
+          "title": "登录时自动启动 EchoNote",
+          "description": "EchoNote 将随时准备就绪，无需手动开启"
+        },
+        "notificationDetect": {
+          "title": "自动开始/停止会议监听",
+          "description": "无需每次按按钮 - 我们会自动为您开始/停止监听"
+        },
+        "saveRecordings": {
+          "title": "保存录音",
+          "description": "会议录音将保存在本地，不会离开您的设备"
+        },
+        "telemetryConsent": {
+          "title": "分享使用数据",
+          "description": "通过分享匿名元数据（如按钮点击）帮助我们改进 EchoNote"
+        }
+      },
+      "language": {
+        "title": "语言和词汇",
+        "mainLanguage": "主要语言",
+        "spokenLanguages": "口语语言",
+        "providerWarning": "{{providers}} 之外的提供商可能无法正常工作。",
+        "appLanguage": "应用语言",
+        "appLanguageDescription": "选择应用界面的显示语言"
+      },
+      "notifications": {
+        "title": "通知"
+      },
+      "permissions": {
+        "title": "权限",
+        "microphone": "麦克风",
+        "systemAudio": "系统音频",
+        "accessibility": "辅助功能",
+        "granted": "已授权",
+        "denied": "已拒绝",
+        "openSettings": "打开系统设置"
+      },
+      "audio": {
+        "title": "音频",
+        "inputDevices": "输入设备",
+        "outputDevices": "输出设备",
+        "speakerDevice": "扬声器",
+        "microphoneDevice": "麦克风",
+        "noDevices": "未找到设备",
+        "inputDragHint": "拖动设置麦克风优先级。顶部设备将被自动选中。",
+        "outputDragHint": "拖动设置扬声器优先级。顶部设备将被自动选中。",
+        "active": "当前使用"
+      },
+      "permissions": {
+        "title": "权限",
+        "microphone": "麦克风",
+        "microphoneDescription": "需要此权限在会议和通话中录制您的声音",
+        "systemAudio": "系统音频",
+        "systemAudioDescription": "需要此权限捕捉会议中其他参与者的声音",
+        "accessibility": "辅助功能",
+        "accessibilityDescription": "需要此权限检测会议应用并同步静音状态",
+        "havingTrouble": "遇到问题？",
+        "youCan": "您可以",
+        "request": "请求",
+        "resetWord": "重置",
+        "or": "或",
+        "openPanel": "打开",
+        "permissionPanel": "权限面板。"
+      },
+      "notifications": {
+        "title": "通知",
+        "eventNotifications": "日程通知",
+        "eventNotificationsDescription": "在日历事件开始前 5 分钟收到通知",
+        "microphoneDetection": "麦克风检测",
+        "microphoneDetectionDescription": "根据麦克风活动自动检测会议何时开始。",
+        "excludeApps": "排除检测的应用",
+        "excludeAppsDescription": "这些应用不会触发检测。",
+        "typeToAddApps": "输入以添加应用...",
+        "forEnabledNotifications": "对于已启用的通知",
+        "quitIntercept": "退出拦截（只读）",
+        "quitInterceptDescription": "阻止 EchoNote 退出，这是通知正常工作所必需的。",
+        "respectDnd": "遵守勿扰模式",
+        "respectDndDescription": "当系统启用勿扰模式时不显示通知",
+        "default": "默认",
+        "addCustom": "添加"
+      },
+      "spokenLanguages": {
+        "title": "口语语言",
+        "description": "添加除主要语言外您使用的其他语言",
+        "addLanguage": "添加语言",
+        "noMatchingLanguages": "未找到匹配的语言"
+      },
+      "mainLanguage": {
+        "title": "主要语言",
+        "description": "用于摘要、聊天和 AI 生成回复的语言"
+      }
+    },
+    "ai": {
+      "title": "AI",
+      "llm": {
+        "title": "语言模型",
+        "provider": "提供商",
+        "model": "模型",
+        "apiKey": "API 密钥",
+        "baseUrl": "基础 URL",
+        "configure": "配置",
+        "testConnection": "测试连接",
+        "connectionSuccess": "连接成功",
+        "connectionFailed": "连接失败",
+        "missingConfig": "请在设置中配置您的 AI 提供商"
+      },
+      "stt": {
+        "title": "语音转文字",
+        "provider": "提供商",
+        "apiKey": "API 密钥",
+        "configure": "配置",
+        "localModel": "本地模型",
+        "downloadModel": "下载模型",
+        "downloading": "下载中...",
+        "modelReady": "模型就绪"
+      }
+    },
+    "calendar": {
+      "title": "日历",
+      "connect": "连接日历",
+      "disconnect": "断开连接",
+      "connected": "已连接",
+      "notConnected": "未连接",
+      "selectCalendars": "选择要同步的日历"
+    },
+    "data": {
+      "title": "数据",
+      "storage": "存储",
+      "export": "导出数据",
+      "import": "导入数据",
+      "backupLocation": "备份位置",
+      "clearData": "清除所有数据",
+      "clearDataWarning": "这将删除您所有的会话、笔记和设置。此操作无法撤消。"
+    },
+    "integrations": {
+      "title": "集成"
+    },
+    "lab": {
+      "title": "实验室",
+      "experimentalFeatures": "实验性功能",
+      "warning": "这些功能是实验性的，可能无法按预期工作。"
+    }
+  },
+  "sidebar": {
+    "timeline": "时间线",
+    "search": "搜索",
+    "newSession": "新建会话",
+    "folders": "文件夹",
+    "contacts": "联系人",
+    "templates": "模板",
+    "extensions": "扩展",
+    "prompts": "提示词",
+    "chatShortcuts": "聊天快捷方式",
+    "calendar": "日历",
+    "ai": "AI 助手",
+    "settings": "设置",
+    "changelog": "更新日志"
+  },
+  "tabs": {
+    "close": "关闭",
+    "closeOthers": "关闭其他",
+    "closeAll": "关闭全部",
+    "closeToRight": "关闭右侧",
+    "pin": "固定标签",
+    "unpin": "取消固定",
+    "duplicate": "复制标签"
+  },
+  "session": {
+    "title": "会话",
+    "newSession": "新建会话",
+    "untitled": "无标题",
+    "generatingTitle": "正在生成标题...",
+    "startListening": "开始监听",
+    "stopListening": "停止监听",
+    "listening": "正在监听...",
+    "transcript": "转录",
+    "notes": "笔记",
+    "enhancedNotes": "AI 笔记",
+    "participants": "参与者",
+    "recording": "录音中",
+    "transcribing": "转录中...",
+    "duration": "时长",
+    "createdAt": "创建时间",
+    "updatedAt": "最后修改",
+    "noTranscript": "暂无转录",
+    "noNotes": "暂无笔记",
+    "addParticipant": "添加参与者",
+    "removeParticipant": "移除参与者",
+    "exportSession": "导出会话",
+    "deleteSession": "删除会话",
+    "deleteSessionConfirm": "确定要删除此会话吗？此操作无法撤消。",
+    "moveToFolder": "移动到文件夹",
+    "shareSession": "分享会话",
+    "joinAndListen": "加入并监听",
+    "joinZoomAndListen": "加入 Zoom 并开始监听",
+    "joinGoogleMeetAndListen": "加入 Google Meet 并开始监听",
+    "joinWebexAndListen": "加入 Webex 并开始监听",
+    "joinTeamsAndListen": "加入 Teams 并开始监听",
+    "configure": "配置",
+    "copyLink": "复制链接",
+    "comingSoon": "即将推出",
+    "moveTo": "移动到",
+    "opening": "正在打开...",
+    "showInFinder": "在访达中显示",
+    "deleteNote": "删除笔记",
+    "deleting": "正在删除...",
+    "failedToDelete": "删除失败",
+    "deleteOnlyRecording": "仅删除录音",
+    "batchProcessing": "批量处理中",
+    "exportMemoToPdf": "导出备忘录为 PDF",
+    "exportSummaryToPdf": "导出摘要为 PDF",
+    "exportTranscriptToPdf": "导出转录为 PDF",
+    "exportToPdf": "导出为 PDF",
+    "exporting": "正在导出...",
+    "exportTranscript": "导出转录",
+    "configureProvider": "您需要配置语言模型以总结此会议",
+    "selectModel": "您需要选择一个模型以总结此会议",
+    "configureApiKeyAndBaseUrl": "您需要为语言模型提供商配置 API 密钥和基础 URL",
+    "configureApiKey": "您需要为语言模型提供商配置 API 密钥",
+    "configureBaseUrl": "您需要为语言模型提供商配置基础 URL"
+  },
+  "chat": {
+    "title": "聊天",
+    "placeholder": "询问关于这个会话的任何问题...",
+    "send": "发送",
+    "thinking": "思考中...",
+    "newChat": "新对话",
+    "clearChat": "清除对话",
+    "copyMessage": "复制消息",
+    "regenerate": "重新生成",
+    "stopGenerating": "停止",
+    "noMessages": "开始对话",
+    "errorMessage": "获取响应失败，请重试。",
+    "attached": "已附加：",
+    "comingSoon": "即将推出",
+    "shiftEnterHint": "按 Shift + Enter 换行",
+    "inputPlaceholder": "询问、搜索任何内容，或发挥创意！",
+    "toggle": "切换",
+    "close": "关闭",
+    "askAnything": "向 EchoNote 提问",
+    "recentChats": "最近对话",
+    "noRecentChats": "暂无最近对话",
+    "aiName": "EchoNote AI",
+    "configureModelMessage": "嗨！你需要配置一个语言模型才能和我聊天！",
+    "openAiSettings": "打开 AI 设置",
+    "welcomeMessage": "嗨！我可以帮你做很多有趣的事情 :)",
+    "shortcuts": "快捷方式",
+    "prompts": "提示词"
+  },
+  "contacts": {
+    "title": "联系人",
+    "people": "人员",
+    "organizations": "组织",
+    "addPerson": "添加人员",
+    "addOrganization": "添加组织",
+    "editPerson": "编辑人员",
+    "editOrganization": "编辑组织",
+    "deletePerson": "删除人员",
+    "deleteOrganization": "删除组织",
+    "name": "姓名",
+    "email": "邮箱",
+    "phone": "电话",
+    "company": "公司",
+    "notes": "备注",
+    "pinContact": "固定联系人",
+    "unpinContact": "取消固定",
+    "recentSessions": "最近会话"
+  },
+  "templates": {
+    "title": "模板",
+    "create": "创建模板",
+    "edit": "编辑模板",
+    "delete": "删除模板",
+    "duplicate": "复制模板",
+    "name": "模板名称",
+    "description": "描述",
+    "sections": "章节",
+    "addSection": "添加章节",
+    "removeSection": "移除章节",
+    "sectionTitle": "章节标题",
+    "sectionPrompt": "章节提示词",
+    "noTemplates": "暂无模板",
+    "useTemplate": "使用模板"
+  },
+  "extensions": {
+    "title": "扩展",
+    "installed": "已安装",
+    "available": "可用",
+    "install": "安装",
+    "uninstall": "卸载",
+    "enable": "启用",
+    "disable": "禁用",
+    "settings": "扩展设置",
+    "noExtensions": "未安装扩展"
+  },
+  "prompts": {
+    "title": "提示词",
+    "create": "创建提示词",
+    "edit": "编辑提示词",
+    "delete": "删除提示词",
+    "name": "提示词名称",
+    "content": "提示词内容",
+    "noPrompts": "暂无提示词"
+  },
+  "shortcuts": {
+    "title": "聊天快捷方式",
+    "create": "创建快捷方式",
+    "edit": "编辑快捷方式",
+    "delete": "删除快捷方式",
+    "name": "快捷方式名称",
+    "prompt": "提示词",
+    "noShortcuts": "暂无快捷方式"
+  },
+  "folders": {
+    "title": "文件夹",
+    "create": "创建文件夹",
+    "rename": "重命名文件夹",
+    "delete": "删除文件夹",
+    "moveTo": "移动到",
+    "noFolders": "暂无文件夹",
+    "root": "根目录"
+  },
+  "feedback": {
+    "title": "发送反馈",
+    "bugReport": "Bug 报告",
+    "featureRequest": "功能请求",
+    "placeholder": "描述您的反馈...",
+    "submit": "提交",
+    "thanks": "感谢您的反馈！"
+  },
+  "errors": {
+    "generic": "出了点问题",
+    "networkError": "网络错误。请检查您的连接。",
+    "configError": "配置错误",
+    "permissionDenied": "权限被拒绝",
+    "notFound": "未找到",
+    "timeout": "请求超时",
+    "aiError": "AI 服务错误，请重试。"
+  },
+  "time": {
+    "today": "今天",
+    "yesterday": "昨天",
+    "tomorrow": "明天",
+    "daysAgo": "{{count}} 天前",
+    "aWeekAgo": "一周前",
+    "weeksAgo": "{{count}} 周前",
+    "aMonthAgo": "一个月前",
+    "monthsAgo": "{{count}} 个月前",
+    "inDays": "{{count}} 天后",
+    "inAWeek": "一周后",
+    "inWeeks": "{{count}} 周后",
+    "inAMonth": "一个月后",
+    "inMonths": "{{count}} 个月后",
+    "thisWeek": "本周",
+    "lastWeek": "上周",
+    "thisMonth": "本月",
+    "lastMonth": "上月",
+    "older": "更早",
+    "future": "即将到来",
+    "goBackToNow": "回到现在",
+    "noItemsToday": "今天没有内容"
+  }
+}

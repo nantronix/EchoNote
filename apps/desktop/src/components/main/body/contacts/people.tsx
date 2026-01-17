@@ -1,8 +1,7 @@
+import { cn } from "@echonote/utils";
 import { CornerDownLeft, Pin } from "lucide-react";
 import { Reorder } from "motion/react";
 import React, { useCallback, useMemo, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { ColumnHeader, getInitials, type SortOption } from "./shared";

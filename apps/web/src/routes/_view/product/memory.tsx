@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-
 import { cn } from "@echonote/utils";
+import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_view/product/memory")({
   component: Component,

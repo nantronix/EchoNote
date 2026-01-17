@@ -1,6 +1,3 @@
-import { ChevronDownIcon, RefreshCcwIcon } from "lucide-react";
-import { useCallback, useMemo, useRef, useState } from "react";
-
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { Button } from "@echonote/ui/components/ui/button";
 import {
@@ -9,6 +6,8 @@ import {
   PopoverTrigger,
 } from "@echonote/ui/components/ui/popover";
 import { cn } from "@echonote/utils";
+import { ChevronDownIcon, RefreshCcwIcon } from "lucide-react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { useAudioPlayer } from "../../../../../../contexts/audio-player/provider";
 import { useListener } from "../../../../../../contexts/listener";

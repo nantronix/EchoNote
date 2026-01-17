@@ -1,6 +1,3 @@
-import { CalendarIcon, ExternalLinkIcon, SparklesIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-
 import { commands as openerCommands } from "@echonote/plugin-opener2";
 import NoteEditor from "@echonote/tiptap/editor";
 import { md2json } from "@echonote/tiptap/shared";
@@ -17,6 +14,8 @@ import {
   useScrollFade,
 } from "@echonote/ui/components/ui/scroll-fade";
 import { safeFormat } from "@echonote/utils";
+import { CalendarIcon, ExternalLinkIcon, SparklesIcon } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 import { type Tab } from "../../../../store/zustand/tabs";
 import { StandardTabWrapper } from "../index";

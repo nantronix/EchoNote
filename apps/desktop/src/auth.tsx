@@ -1,3 +1,7 @@
+import { commands as analyticsCommands } from "@echonote/plugin-analytics";
+import { commands } from "@echonote/plugin-auth";
+import { commands as miscCommands } from "@echonote/plugin-misc";
+import { commands as openerCommands } from "@echonote/plugin-opener2";
 import {
   AuthRetryableFetchError,
   AuthSessionMissingError,
@@ -20,11 +24,6 @@ import {
   useMemo,
   useState,
 } from "react";
-
-import { commands as analyticsCommands } from "@echonote/plugin-analytics";
-import { commands } from "@echonote/plugin-auth";
-import { commands as miscCommands } from "@echonote/plugin-misc";
-import { commands as openerCommands } from "@echonote/plugin-opener2";
 
 import { env } from "./env";
 import { getScheme } from "./utils";

@@ -1,3 +1,4 @@
+import type { SpeakerHintStorage, Word } from "@echonote/store";
 import {
   DependencyList,
   RefObject,
@@ -6,8 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-
-import type { SpeakerHintStorage, Word } from "@echonote/store";
 
 import * as main from "../../../../../../../store/tinybase/store/main";
 import {

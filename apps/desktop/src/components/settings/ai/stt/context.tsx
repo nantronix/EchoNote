@@ -1,4 +1,8 @@
 import {
+  commands as localSttCommands,
+  type SupportedSttModel,
+} from "@echonote/plugin-local-stt";
+import {
   createContext,
   useCallback,
   useContext,
@@ -6,11 +10,6 @@ import {
   useRef,
   useState,
 } from "react";
-
-import {
-  commands as localSttCommands,
-  type SupportedSttModel,
-} from "@echonote/plugin-local-stt";
 
 import { useBillingAccess } from "../../../../billing";
 import { useConfigValues } from "../../../../config/use-config";

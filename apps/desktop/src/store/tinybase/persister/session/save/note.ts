@@ -1,7 +1,6 @@
-import { sep } from "@tauri-apps/api/path";
-
 import type { ParsedDocument } from "@echonote/plugin-fs-sync";
 import { isValidTiptapContent, json2md } from "@echonote/tiptap/shared";
+import { sep } from "@tauri-apps/api/path";
 
 import type { Store } from "../../../store/main";
 import {

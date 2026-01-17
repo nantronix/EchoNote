@@ -2,6 +2,7 @@ import { useForm } from "@tanstack/react-form";
 import { useQuery } from "@tanstack/react-query";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   commands as detectCommands,
@@ -18,6 +19,7 @@ import { useConfigValues } from "../../../config/use-config";
 import * as settings from "../../../store/tinybase/store/settings";
 
 export function NotificationSettingsView() {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -236,9 +238,13 @@ export function NotificationSettingsView() {
         {(field) => (
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h3 className="mb-1 text-sm font-medium">Event notifications</h3>
+              <h3 className="mb-1 text-sm font-medium">
+                {t("settings.general.notifications.eventNotifications")}
+              </h3>
               <p className="text-xs text-neutral-600">
-                Get notified 5 minutes before calendar events start
+                {t(
+                  "settings.general.notifications.eventNotificationsDescription",
+                )}
               </p>
             </div>
             <Switch
@@ -255,11 +261,12 @@ export function NotificationSettingsView() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
                 <h3 className="mb-1 text-sm font-medium">
-                  Microphone detection
+                  {t("settings.general.notifications.microphoneDetection")}
                 </h3>
                 <p className="text-xs text-neutral-600">
-                  Automatically detect when a meeting starts based on microphone
-                  activity.
+                  {t(
+                    "settings.general.notifications.microphoneDetectionDescription",
+                  )}
                 </p>
               </div>
               <Switch
@@ -272,10 +279,10 @@ export function NotificationSettingsView() {
               <div className={cn(["ml-6 border-l-2 border-muted pl-6 pt-2"])}>
                 <div className="mb-3 space-y-1">
                   <h4 className="text-sm font-medium">
-                    Exclude apps from detection
+                    {t("settings.general.notifications.excludeApps")}
                   </h4>
                   <p className="text-xs text-neutral-600">
-                    These apps will not trigger detection.
+                    {t("settings.general.notifications.excludeAppsDescription")}
                   </p>
                 </div>
                 <div className="relative" ref={containerRef}>
@@ -300,7 +307,7 @@ export function NotificationSettingsView() {
                           {app}
                           {isDefault && (
                             <span className="text-[10px] opacity-70">
-                              (default)
+                              ({t("settings.general.notifications.default")})
                             </span>
                           )}
                           {!isDefault && (
@@ -323,7 +330,7 @@ export function NotificationSettingsView() {
                       className="flex-1 min-w-[120px] bg-transparent outline-none text-sm placeholder:text-muted-foreground"
                       placeholder={
                         ignoredPlatforms.length === 0
-                          ? "Type to add apps..."
+                          ? t("settings.general.notifications.typeToAddApps")
                           : ""
                       }
                       value={inputValue}
@@ -352,8 +359,10 @@ export function NotificationSettingsView() {
                             >
                               {isCustom ? (
                                 <span>
-                                  Add "
-                                  <span className="font-medium">{app}</span>"
+                                  {t(
+                                    "settings.general.notifications.addCustom",
+                                  )}{" "}
+                                  "<span className="font-medium">{app}</span>"
                                 </span>
                               ) : (
                                 app
@@ -375,7 +384,7 @@ export function NotificationSettingsView() {
         <div className="relative flex items-center pt-4 pb-2">
           <div className="w-full border-t border-muted" />
           <span className="absolute left-1/2 -translate-x-1/2 bg-background px-4 text-xs font-medium text-muted-foreground">
-            For enabled notifications
+            {t("settings.general.notifications.forEnabledNotifications")}
           </span>
         </div>
 
@@ -384,11 +393,10 @@ export function NotificationSettingsView() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
                 <h3 className="mb-1 text-sm font-medium">
-                  Quit intercept (Read-only)
+                  {t("settings.general.notifications.quitIntercept")}
                 </h3>
                 <p className="text-xs text-neutral-600">
-                  Prevents EchoNote from quitting, which is required for
-                  notifications to work.
+                  {t("settings.general.notifications.quitInterceptDescription")}
                 </p>
               </div>
               <Switch
@@ -405,11 +413,10 @@ export function NotificationSettingsView() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1">
                 <h3 className="mb-1 text-sm font-medium">
-                  Respect Do-Not-Disturb mode
+                  {t("settings.general.notifications.respectDnd")}
                 </h3>
                 <p className="text-xs text-neutral-600">
-                  Don't show notifications when Do-Not-Disturb is enabled on
-                  your system
+                  {t("settings.general.notifications.respectDndDescription")}
                 </p>
               </div>
               <Switch

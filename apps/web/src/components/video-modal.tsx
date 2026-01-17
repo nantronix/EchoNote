@@ -1,8 +1,7 @@
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import MuxPlayer, { type MuxPlayerRefAttributes } from "@mux/mux-player-react";
 import { useEffect, useRef } from "react";
-
-import { cn } from "@echonote/utils";
 
 interface VideoModalProps {
   playbackId: string;

@@ -1,8 +1,7 @@
-import { createCustomPersister } from "tinybase/persisters/with-schemas";
-import type { Content } from "tinybase/with-schemas";
-
 import { commands as detectCommands } from "@echonote/plugin-detect";
 import { commands } from "@echonote/plugin-settings";
+import { createCustomPersister } from "tinybase/persisters/with-schemas";
+import type { Content } from "tinybase/with-schemas";
 
 import type { Schemas, Store } from "../../store/settings";
 import { StoreOrMergeableStore } from "../../store/shared";

@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { GripVertical } from "lucide-react";
 import * as ResizablePrimitive from "react-resizable-panels";
-
-import { cn } from "@echonote/utils";
 
 const ResizablePanelGroup = ({
   className,

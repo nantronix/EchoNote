@@ -1,10 +1,9 @@
-import type { ReactNode } from "react";
-
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@echonote/ui/components/ui/resizable";
+import type { ReactNode } from "react";
 
 export function ResourceListLayout({
   listColumn,

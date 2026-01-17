@@ -1,6 +1,5 @@
-import * as React from "react";
-
 import { cn } from "@echonote/utils";
+import * as React from "react";
 
 interface ModalProps {
   open: boolean;

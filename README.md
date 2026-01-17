@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/gooqi/EchoNote/blob/main/LICENSE">
+  <a href="https://github.com/nantronix/EchoNote/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/license-GPL--3.0-blue.svg" alt="License">
   </a>
 </p>
@@ -36,7 +36,7 @@ EchoNote 是一款 AI 驱动的智能会议笔记应用，基于 [Hyprnote](http
 
 ```bash
 # 从源码构建（见下方开发部分）
-git clone git@github.com:gooqi/EchoNote.git
+git clone git@github.com:nantronix/EchoNote.git
 cd EchoNote
 pnpm install
 pnpm -F desktop tauri:dev
@@ -174,5 +174,5 @@ EchoNote 是 [Hyprnote](https://github.com/fastrepl/hyprnote) 的 fork 版本，
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/gooqi">gooqi</a>
+  Made with ❤️ by <a href="https://github.com/nantronix">Nanhara Technologies</a>
 </p>

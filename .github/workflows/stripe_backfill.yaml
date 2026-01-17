@@ -19,7 +19,7 @@ jobs:
       - uses: ./.github/actions/bun_install
       - uses: ./.github/actions/pnpm_install
       - uses: ./.github/actions/infisical_install
-      - run: pnpm --filter @hypr/api install
+      - run: pnpm --filter @echonote/api install
       - run: |
           ARGS=""
           if [ -n "${{ inputs.created_gte }}" ]; then

@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import type { ChatStatus } from "ai";
 import { useEffect, useRef } from "react";
-
-import { cn } from "@echonote/utils";
 
 import type { HyprUIMessage } from "../../../chat/types";
 import { useShell } from "../../../contexts/shell";

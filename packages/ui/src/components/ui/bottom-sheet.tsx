@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { AnimatePresence, motion } from "motion/react";
 import * as React from "react";
-
-import { cn } from "@echonote/utils";
 
 interface BottomSheetProps {
   open: boolean;

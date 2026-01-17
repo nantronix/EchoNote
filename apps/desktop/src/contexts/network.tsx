@@ -1,6 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
-
 import { events } from "@echonote/plugin-network";
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface NetworkContextValue {
   isOnline: boolean;

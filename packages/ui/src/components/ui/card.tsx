@@ -1,6 +1,5 @@
-import { forwardRef } from "react";
-
 import { cn } from "@echonote/utils";
+import { forwardRef } from "react";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "outline" | "ghost";

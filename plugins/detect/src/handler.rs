@@ -5,11 +5,11 @@ use tauri_specta::Event;
 use crate::{DetectEvent, SharedState, dnd};
 
 pub(crate) fn default_ignored_bundle_ids() -> Vec<String> {
-    let hyprnote = [
-        "com.hyprnote.dev",
-        "com.hyprnote.stable",
-        "com.hyprnote.nightly",
-        "com.hyprnote.staging",
+    let echonote = [
+        "com.echonote.dev",
+        "com.echonote.stable",
+        "com.echonote.nightly",
+        "com.echonote.staging",
     ];
 
     let dictation_apps = [
@@ -47,7 +47,7 @@ pub(crate) fn default_ignored_bundle_ids() -> Vec<String> {
 
     dictation_apps
         .into_iter()
-        .chain(hyprnote)
+        .chain(echonote)
         .chain(ides)
         .chain(screen_recording)
         .chain(ai_assistants)

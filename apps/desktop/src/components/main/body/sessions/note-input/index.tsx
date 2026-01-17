@@ -1,3 +1,9 @@
+import type { TiptapEditor } from "@echonote/tiptap/editor";
+import {
+  ScrollFadeOverlay,
+  useScrollFade,
+} from "@echonote/ui/components/ui/scroll-fade";
+import { cn } from "@echonote/utils";
 import {
   forwardRef,
   useCallback,
@@ -7,13 +13,6 @@ import {
   useState,
 } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-
-import type { TiptapEditor } from "@echonote/tiptap/editor";
-import {
-  ScrollFadeOverlay,
-  useScrollFade,
-} from "@echonote/ui/components/ui/scroll-fade";
-import { cn } from "@echonote/utils";
 
 import { useListener } from "../../../../../contexts/listener";
 import { useScrollPreservation } from "../../../../../hooks/useScrollPreservation";

@@ -1,22 +1,8 @@
-import {
-  ArrowDownUp,
-  BookText,
-  Globe,
-  Plus,
-  Search,
-  Star,
-  X,
-} from "lucide-react";
-import {
-  type ComponentRef,
-  useCallback,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
-import { createQueries } from "tinybase/with-schemas";
-
-import type { Template, TemplateSection, TemplateStorage } from "@echonote/store";
+import type {
+  Template,
+  TemplateSection,
+  TemplateStorage,
+} from "@echonote/store";
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   DropdownMenu,
@@ -36,6 +22,23 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import {
+  ArrowDownUp,
+  BookText,
+  Globe,
+  Plus,
+  Search,
+  Star,
+  X,
+} from "lucide-react";
+import {
+  type ComponentRef,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { createQueries } from "tinybase/with-schemas";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { type Tab, useTabs } from "../../../../store/zustand/tabs";

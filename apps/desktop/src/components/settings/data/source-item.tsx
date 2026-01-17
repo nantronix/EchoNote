@@ -1,8 +1,7 @@
-import { CheckIcon, Loader2Icon } from "lucide-react";
-
 import { type ImportSourceInfo } from "@echonote/plugin-importer";
 import { commands as openerCommands } from "@echonote/plugin-opener2";
 import { Button } from "@echonote/ui/components/ui/button";
+import { CheckIcon, Loader2Icon } from "lucide-react";
 
 export function SourceItem({
   source,

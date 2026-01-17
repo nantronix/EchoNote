@@ -1,8 +1,7 @@
+import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { useRouteContext } from "@tanstack/react-router";
 import { useCallback } from "react";
 import { useShallow } from "zustand/shallow";
-
-import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 
 import { useTabs } from "../../store/zustand/tabs";
 import { id } from "../../utils";

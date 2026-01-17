@@ -1,10 +1,9 @@
-import { disable, enable } from "@tauri-apps/plugin-autostart";
-
 import { commands as detectCommands } from "@echonote/plugin-detect";
 import {
   commands as localSttCommands,
   type SupportedSttModel,
 } from "@echonote/plugin-local-stt";
+import { disable, enable } from "@tauri-apps/plugin-autostart";
 
 export type ConfigKey =
   | "autostart"

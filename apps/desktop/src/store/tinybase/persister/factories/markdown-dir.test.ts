@@ -1,6 +1,5 @@
-import { beforeEach, describe, expect, test, vi } from "vitest";
-
 import type { JsonValue } from "@echonote/plugin-fs-sync";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 
 import {
   createTestMainStore,

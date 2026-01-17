@@ -1,11 +1,10 @@
-import { AlertCircleIcon, CheckCircleIcon, Loader2Icon } from "lucide-react";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { AlertCircleIcon, CheckCircleIcon, Loader2Icon } from "lucide-react";
 
 type Props =
   | { status?: "success" | null }

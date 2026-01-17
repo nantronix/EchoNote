@@ -1,7 +1,6 @@
-import { sep } from "@tauri-apps/api/path";
-
 import { commands as fs2Commands } from "@echonote/plugin-fs2";
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
+import { sep } from "@tauri-apps/api/path";
 
 import {
   CHAT_MESSAGES_FILE,

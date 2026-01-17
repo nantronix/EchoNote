@@ -1,5 +1,6 @@
 import { Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Badge } from "@echonote/ui/components/ui/badge";
 import { Button } from "@echonote/ui/components/ui/button";
@@ -46,6 +47,7 @@ export function SpokenLanguagesView({
   onChange,
   supportedLanguages,
 }: SpokenLanguagesViewProps) {
+  const { t } = useTranslation();
   const [languageSearchQuery, setLanguageSearchQuery] = useState("");
   const [languageInputFocused, setLanguageInputFocused] = useState(false);
   const [languageSelectedIndex, setLanguageSelectedIndex] = useState(-1);
@@ -102,9 +104,11 @@ export function SpokenLanguagesView({
 
   return (
     <div>
-      <h3 className="text-sm font-medium mb-1">Spoken languages</h3>
+      <h3 className="text-sm font-medium mb-1">
+        {t("settings.general.spokenLanguages.title")}
+      </h3>
       <p className="text-xs text-neutral-600 mb-3">
-        Add other languages you use other than the main language
+        {t("settings.general.spokenLanguages.description")}
       </p>
       <div className="relative">
         <div
@@ -161,7 +165,11 @@ export function SpokenLanguagesView({
                 : undefined
             }
             aria-label="Add spoken language"
-            placeholder={value.length === 0 ? "Add language" : ""}
+            placeholder={
+              value.length === 0
+                ? t("settings.general.spokenLanguages.addLanguage")
+                : ""
+            }
             className="flex-1 min-w-[120px] bg-transparent text-sm focus:outline-none placeholder:text-neutral-500"
           />
         </div>
@@ -201,7 +209,7 @@ export function SpokenLanguagesView({
               ))
             ) : (
               <div className="px-3 py-2 text-sm text-neutral-500 text-center">
-                No matching languages found
+                {t("settings.general.spokenLanguages.noMatchingLanguages")}
               </div>
             )}
           </div>

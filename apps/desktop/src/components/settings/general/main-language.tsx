@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   Select,
@@ -22,6 +23,7 @@ export function MainLanguageView({
   onChange: (value: string) => void;
   supportedLanguages: readonly string[];
 }) {
+  const { t } = useTranslation();
   const deduped = useMemo(() => {
     const map = new Map<string, string>();
     for (const code of supportedLanguages) {
@@ -41,9 +43,11 @@ export function MainLanguageView({
   return (
     <div className="flex flex-row items-center justify-between">
       <div>
-        <h3 className="text-sm font-medium mb-1">Main language</h3>
+        <h3 className="text-sm font-medium mb-1">
+          {t("settings.general.mainLanguage.title")}
+        </h3>
         <p className="text-xs text-neutral-600">
-          Language for summaries, chats, and AI-generated responses
+          {t("settings.general.mainLanguage.description")}
         </p>
       </div>
       <Select value={normalizedValue} onValueChange={onChange}>

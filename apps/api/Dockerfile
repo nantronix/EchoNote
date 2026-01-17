@@ -12,14 +12,14 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/api/package.json apps/api/package.json
 COPY packages/api-client/package.json packages/api-client/package.json
 COPY packages/supabase/package.json packages/supabase/package.json
-RUN pnpm fetch --prod --filter @hypr/api
+RUN pnpm fetch --prod --filter @echonote/api
 
 FROM deps AS build
 COPY apps/api apps/api
 COPY packages/api-client packages/api-client
 COPY packages/supabase packages/supabase
-RUN pnpm install --filter @hypr/api --frozen-lockfile
-RUN pnpm deploy --filter @hypr/api --prod --legacy /runtime
+RUN pnpm install --filter @echonote/api --frozen-lockfile
+RUN pnpm deploy --filter @echonote/api --prod --legacy /runtime
 
 FROM oven/bun:1 AS runtime
 WORKDIR /app

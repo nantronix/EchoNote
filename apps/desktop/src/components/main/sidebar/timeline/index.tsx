@@ -1,5 +1,6 @@
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { type ReactNode, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@echonote/ui/components/ui/button";
 import { cn, safeParseDate, startOfDay } from "@echonote/utils";
@@ -17,7 +18,45 @@ import { useAnchor, useAutoScrollToAnchor } from "./anchor";
 import { TimelineItemComponent } from "./item";
 import { CurrentTimeIndicator, useCurrentTimeMs } from "./realtime";
 
+function translateBucketLabel(
+  label: string,
+  t: (key: string, opts?: Record<string, unknown>) => string,
+): string {
+  if (label === "Today") return t("time.today");
+  if (label === "Yesterday") return t("time.yesterday");
+  if (label === "Tomorrow") return t("time.tomorrow");
+
+  const daysAgoMatch = label.match(/^(\d+) days ago$/);
+  if (daysAgoMatch) return t("time.daysAgo", { count: daysAgoMatch[1] });
+
+  if (label === "a week ago") return t("time.aWeekAgo");
+
+  const weeksAgoMatch = label.match(/^(\d+) weeks ago$/);
+  if (weeksAgoMatch) return t("time.weeksAgo", { count: weeksAgoMatch[1] });
+
+  if (label === "a month ago") return t("time.aMonthAgo");
+
+  const monthsAgoMatch = label.match(/^(\d+) months ago$/);
+  if (monthsAgoMatch) return t("time.monthsAgo", { count: monthsAgoMatch[1] });
+
+  const inDaysMatch = label.match(/^in (\d+) days$/);
+  if (inDaysMatch) return t("time.inDays", { count: inDaysMatch[1] });
+
+  if (label === "in a week") return t("time.inAWeek");
+
+  const inWeeksMatch = label.match(/^in (\d+) weeks$/);
+  if (inWeeksMatch) return t("time.inWeeks", { count: inWeeksMatch[1] });
+
+  if (label === "in a month") return t("time.inAMonth");
+
+  const inMonthsMatch = label.match(/^in (\d+) months$/);
+  if (inMonthsMatch) return t("time.inMonths", { count: inMonthsMatch[1] });
+
+  return label;
+}
+
 export function TimelineView() {
+  const { t } = useTranslation();
   const buckets = useTimelineData();
   const hasToday = useMemo(
     () => buckets.some((bucket) => bucket.label === "Today"),
@@ -109,7 +148,7 @@ export function TimelineView() {
                 ])}
               >
                 <div className="text-base font-bold text-neutral-900">
-                  {bucket.label}
+                  {translateBucketLabel(bucket.label, t)}
                 </div>
               </div>
               {isToday ? (
@@ -164,7 +203,7 @@ export function TimelineView() {
           ) : (
             <ChevronUpIcon size={12} />
           )}
-          <span className="text-xs">Go back to now</span>
+          <span className="text-xs">{t("time.goBackToNow")}</span>
         </Button>
       )}
     </div>
@@ -184,6 +223,7 @@ function TodayBucket({
   selectedSessionId: string | undefined;
   selectedEventId: string | undefined;
 }) {
+  const { t } = useTranslation();
   const currentTimeMs = useCurrentTimeMs();
 
   const entries = useMemo(
@@ -208,7 +248,7 @@ function TodayBucket({
         <>
           <CurrentTimeIndicator ref={registerIndicator} />
           <div className="px-3 py-4 text-sm text-neutral-400 text-center">
-            No items today
+            {t("time.noItemsToday")}
           </div>
         </>
       );

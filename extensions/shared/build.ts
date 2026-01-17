@@ -41,7 +41,9 @@ function createHyprExternalsPlugin(): esbuild.Plugin {
         }
 
         if (args.path.startsWith("@echonote/ui")) {
-          const subpath = args.path.replace("@echonote/ui", "").replace(/^\//, "");
+          const subpath = args.path
+            .replace("@echonote/ui", "")
+            .replace(/^\//, "");
           if (subpath) {
             return {
               contents: `module.exports = window.${HYPR_MODULES["@echonote/ui"].global}["${subpath}"]`,
@@ -62,7 +64,7 @@ function createHyprExternalsPlugin(): esbuild.Plugin {
 
 function getExtensionsDir(): string {
   const os = Deno.build.os;
-  const appId = "com.hyprnote.dev";
+  const appId = "com.echonote.dev";
   const home = Deno.env.get("HOME") ?? Deno.env.get("USERPROFILE") ?? "";
 
   if (os === "darwin") {

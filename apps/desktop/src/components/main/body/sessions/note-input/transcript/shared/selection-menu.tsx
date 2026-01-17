@@ -1,3 +1,4 @@
+import { cn } from "@echonote/utils";
 import {
   flip,
   FloatingPortal,
@@ -13,8 +14,6 @@ import {
   useEffect,
   useState,
 } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { useAutoCloser } from "../../../../../../../hooks/useAutoCloser";
 

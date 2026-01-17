@@ -1,3 +1,5 @@
+import { Button } from "@echonote/ui/components/ui/button";
+import { cn } from "@echonote/utils";
 import { clsx } from "clsx";
 import {
   ArrowLeft,
@@ -6,9 +8,6 @@ import {
   CheckCheck,
   MessageSquare,
 } from "lucide-react";
-
-import { Button } from "@echonote/ui/components/ui/button";
-import { cn } from "@echonote/utils";
 
 import { MenuItem } from "./shared";
 

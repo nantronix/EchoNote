@@ -1,7 +1,6 @@
-import * as _UI from "tinybase/ui-react/with-schemas";
-
 import { getCurrentWebviewWindowLabel } from "@echonote/plugin-windows";
 import type { Schemas } from "@echonote/store";
+import * as _UI from "tinybase/ui-react/with-schemas";
 
 import type { Store } from "../../store/main";
 import { initSessionOps } from "./ops";

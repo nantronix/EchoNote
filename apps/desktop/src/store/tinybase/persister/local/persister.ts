@@ -1,9 +1,8 @@
+import { commands as db2Commands } from "@echonote/plugin-db2";
 import {
   createCustomSqlitePersister,
   DpcJson,
 } from "tinybase/persisters/with-schemas";
-
-import { commands as db2Commands } from "@echonote/plugin-db2";
 
 import type { Store } from "../../store/main";
 import { MergeableStoreOnly } from "../../store/shared";

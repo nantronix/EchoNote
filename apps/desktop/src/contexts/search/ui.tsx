@@ -1,3 +1,4 @@
+import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { Highlight } from "@orama/highlight";
 import {
   createContext,
@@ -9,8 +10,6 @@ import {
   useState,
 } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
-
-import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 
 import type {
   SearchDocument,

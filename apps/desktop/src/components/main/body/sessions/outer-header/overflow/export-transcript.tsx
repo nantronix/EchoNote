@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { FileTextIcon, Loader2Icon } from "lucide-react";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import {
@@ -14,6 +15,7 @@ import * as main from "../../../../../../store/tinybase/store/main";
 import { parseTranscriptWords } from "../../../../../../store/transcript/utils";
 
 export function ExportTranscript({ sessionId }: { sessionId: string }) {
+  const { t } = useTranslation();
   const store = main.UI.useStore(main.STORE_ID);
 
   const transcriptIds = main.UI.useSliceRowIds(
@@ -79,7 +81,9 @@ export function ExportTranscript({ sessionId }: { sessionId: string }) {
       className="cursor-pointer"
     >
       {isPending ? <Loader2Icon className="animate-spin" /> : <FileTextIcon />}
-      <span>{isPending ? "Exporting..." : "Export Transcript"}</span>
+      <span>
+        {isPending ? t("session.exporting") : t("session.exportTranscript")}
+      </span>
     </DropdownMenuItem>
   );
 }

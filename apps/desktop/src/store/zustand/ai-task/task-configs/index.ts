@@ -1,11 +1,10 @@
-import type { LanguageModel, TextStreamPart } from "ai";
-
 import type {
   EnhanceSystem,
   EnhanceUser,
   TitleSystem,
   TitleUser,
 } from "@echonote/plugin-template";
+import type { LanguageModel, TextStreamPart } from "ai";
 
 import type { Store as MainStore } from "../../../tinybase/store/main";
 import type { Store as SettingsStore } from "../../../tinybase/store/settings";

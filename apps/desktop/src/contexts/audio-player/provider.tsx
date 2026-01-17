@@ -1,3 +1,4 @@
+import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { useQuery } from "@tanstack/react-query";
 import {
   createContext,
@@ -8,8 +9,6 @@ import {
   useState,
 } from "react";
 import WaveSurfer from "wavesurfer.js";
-
-import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 
 type AudioPlayerState = "playing" | "paused" | "stopped";
 

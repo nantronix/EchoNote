@@ -1,6 +1,5 @@
-import React from "react";
-
 import { cn } from "@echonote/utils";
+import React from "react";
 
 interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: number;

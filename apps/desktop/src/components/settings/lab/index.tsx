@@ -1,6 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-import { FolderIcon } from "lucide-react";
-
 import { commands as settingsCommands } from "@echonote/plugin-settings";
 import { commands as windowsCommands } from "@echonote/plugin-windows";
 import { Button } from "@echonote/ui/components/ui/button";
@@ -9,6 +6,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
+import { useQuery } from "@tanstack/react-query";
+import { FolderIcon } from "lucide-react";
 
 export function SettingsLab() {
   const { data: basePath } = useQuery({

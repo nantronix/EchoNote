@@ -1,6 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-
 import { cn } from "@echonote/utils";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { MockWindow } from "@/components/mock-window";
 

@@ -1,7 +1,6 @@
+import { cn, formatDistanceToNow } from "@echonote/utils";
 import { StickyNote } from "lucide-react";
 import { useMemo } from "react";
-
-import { cn, formatDistanceToNow } from "@echonote/utils";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { useTabs } from "../../../../store/zustand/tabs";

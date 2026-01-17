@@ -1,13 +1,3 @@
-import {
-  Check,
-  ChevronDown,
-  CirclePlus,
-  Eye,
-  EyeOff,
-  RefreshCcw,
-} from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   Command,
@@ -28,6 +18,15 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import {
+  Check,
+  ChevronDown,
+  CirclePlus,
+  Eye,
+  EyeOff,
+  RefreshCcw,
+} from "lucide-react";
+import { useCallback, useMemo, useState } from "react";
 
 import { useModelMetadata } from "../../../../hooks/useModelMetadata";
 import type { ListModelsResult, ModelIgnoreReason } from "./list-common";

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useResizeObserver } from "usehooks-ts";
 
 import { Kbd } from "@echonote/ui/components/ui/kbd";
@@ -34,6 +35,7 @@ type ProfileSectionProps = {
 };
 
 export function ProfileSection({ onExpandChange }: ProfileSectionProps = {}) {
+  const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentView, setCurrentView] = useState<ProfileView>("main");
   const [mainViewHeight, setMainViewHeight] = useState<number | null>(null);
@@ -182,52 +184,52 @@ export function ProfileSection({ onExpandChange }: ProfileSectionProps = {}) {
   const menuItems = [
     {
       icon: FolderOpenIcon,
-      label: "Folders",
+      label: t("sidebar.folders"),
       onClick: handleClickFolders,
       badge: <Kbd className={kbdClass}>⌘ ⇧ L</Kbd>,
     },
     {
       icon: UsersIcon,
-      label: "Contacts",
+      label: t("sidebar.contacts"),
       onClick: handleClickContacts,
       badge: <Kbd className={kbdClass}>⌘ ⇧ O</Kbd>,
     },
     {
       icon: CalendarIcon,
-      label: "Calendar",
+      label: t("sidebar.calendar"),
       onClick: handleClickCalendar,
       badge: <Kbd className={kbdClass}>⌘ ⇧ C</Kbd>,
     },
     {
       icon: FileTextIcon,
-      label: "Templates",
+      label: t("sidebar.templates"),
       onClick: handleClickTemplates,
     },
     {
       icon: ZapIcon,
-      label: "Shortcuts",
+      label: t("sidebar.chatShortcuts"),
       onClick: handleClickShortcuts,
     },
     {
       icon: MessageSquareIcon,
-      label: "Prompts",
+      label: t("sidebar.prompts"),
       onClick: handleClickPrompts,
     },
     {
       icon: SparklesIcon,
-      label: "AI Settings",
+      label: t("sidebar.ai"),
       onClick: handleClickAI,
       badge: <Kbd className={kbdClass}>⌘ ⇧ A</Kbd>,
     },
     {
       icon: SettingsIcon,
-      label: "App Settings",
+      label: t("sidebar.settings"),
       onClick: handleClickSettings,
       badge: <Kbd className={kbdClass}>⌘ ,</Kbd>,
     },
     {
       icon: CircleHelp,
-      label: "Help",
+      label: t("feedback.title"),
       onClick: handleClickHelp,
     },
   ];
@@ -317,8 +319,9 @@ function ProfileButton({
   isExpanded: boolean;
   onClick: () => void;
 }) {
+  const { t } = useTranslation();
   const auth = useAuth();
-  const name = useMyName(auth?.session?.user.email);
+  const name = useMyName(auth?.session?.user.email, t("common.unknown"));
 
   const profile = useQuery({
     queryKey: ["profile"],
@@ -374,8 +377,8 @@ function ProfileButton({
   );
 }
 
-function useMyName(email?: string) {
+function useMyName(email?: string, unknownLabel?: string) {
   const userId = main.UI.useValue("user_id", main.STORE_ID);
   const name = main.UI.useCell("humans", userId ?? "", "name", main.STORE_ID);
-  return name || email || "Unknown";
+  return name || email || unknownLabel || "Unknown";
 }

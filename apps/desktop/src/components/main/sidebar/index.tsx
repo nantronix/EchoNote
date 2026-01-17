@@ -1,10 +1,9 @@
+import { Button } from "@echonote/ui/components/ui/button";
+import { cn } from "@echonote/utils";
 import { useQuery } from "@tanstack/react-query";
 import { platform } from "@tauri-apps/plugin-os";
 import { AxeIcon, PanelLeftCloseIcon } from "lucide-react";
 import { lazy, Suspense, useState } from "react";
-
-import { Button } from "@echonote/ui/components/ui/button";
-import { cn } from "@echonote/utils";
 
 import { useSearch } from "../../../contexts/search/ui";
 import { useShell } from "../../../contexts/shell";

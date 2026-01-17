@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { useTranscriptSearch } from "./search-context";
 

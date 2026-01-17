@@ -1,3 +1,5 @@
+import { Button } from "@echonote/ui/components/ui/button";
+import { cn } from "@echonote/utils";
 import { platform } from "@tauri-apps/plugin-os";
 import {
   ArrowLeftIcon,
@@ -10,9 +12,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { useResizeObserver } from "usehooks-ts";
 import { useShallow } from "zustand/shallow";
-
-import { Button } from "@echonote/ui/components/ui/button";
-import { cn } from "@echonote/utils";
 
 import { useListener } from "../../../contexts/listener";
 import { useNotifications } from "../../../contexts/notifications";

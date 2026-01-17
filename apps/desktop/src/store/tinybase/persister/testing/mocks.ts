@@ -1,6 +1,5 @@
-import { createMergeableStore } from "tinybase/with-schemas";
-
 import { SCHEMA } from "@echonote/store";
+import { createMergeableStore } from "tinybase/with-schemas";
 
 import {
   SCHEMA as SETTINGS_SCHEMA,

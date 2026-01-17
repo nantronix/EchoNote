@@ -1,8 +1,7 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { Link } from "@tanstack/react-router";
 import { allDocs } from "content-collections";
-
-import { cn } from "@echonote/utils";
 
 import { defaultMDXComponents } from "@/components/mdx";
 

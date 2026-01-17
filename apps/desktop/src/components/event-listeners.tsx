@@ -1,12 +1,11 @@
-import { type UnlistenFn } from "@tauri-apps/api/event";
-import { useEffect, useRef } from "react";
-
 import { events as notificationEvents } from "@echonote/plugin-notification";
 import {
   commands as updaterCommands,
   events as updaterEvents,
 } from "@echonote/plugin-updater2";
 import { getCurrentWebviewWindowLabel } from "@echonote/plugin-windows";
+import { type UnlistenFn } from "@tauri-apps/api/event";
+import { useEffect, useRef } from "react";
 
 import * as main from "../store/tinybase/store/main";
 import {

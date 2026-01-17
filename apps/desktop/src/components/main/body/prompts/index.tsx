@@ -1,11 +1,10 @@
-import { SparklesIcon } from "lucide-react";
-import { useCallback } from "react";
-
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@echonote/ui/components/ui/resizable";
+import { SparklesIcon } from "lucide-react";
+import { useCallback } from "react";
 
 import type { TaskType } from "../../../../store/tinybase/store/prompts";
 import { type Tab, useTabs } from "../../../../store/zustand/tabs";

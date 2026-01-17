@@ -1,10 +1,9 @@
+import { events as detectEvents } from "@echonote/plugin-detect";
+import { commands as notificationCommands } from "@echonote/plugin-notification";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import React, { createContext, useContext, useEffect, useRef } from "react";
 import { useStore } from "zustand";
 import { useShallow } from "zustand/shallow";
-
-import { events as detectEvents } from "@echonote/plugin-detect";
-import { commands as notificationCommands } from "@echonote/plugin-notification";
 
 import {
   createListenerStore,

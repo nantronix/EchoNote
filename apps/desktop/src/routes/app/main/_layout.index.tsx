@@ -1,12 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef } from "react";
-import type { ComponentRef } from "react";
-
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@echonote/ui/components/ui/resizable";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
+import type { ComponentRef } from "react";
 
 import { ChatView } from "../../../components/chat/view";
 import { Body } from "../../../components/main/body";

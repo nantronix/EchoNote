@@ -1,12 +1,11 @@
-import { queryOptions } from "@tanstack/react-query";
-import { useQuery } from "@tanstack/react-query";
-import { useCallback, useEffect, useState } from "react";
-
 import {
   commands as localSttCommands,
   events as localSttEvents,
   type SupportedSttModel,
 } from "@echonote/plugin-local-stt";
+import { queryOptions } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useCallback, useEffect, useState } from "react";
 
 export const localSttKeys = {
   all: ["local-stt"] as const,

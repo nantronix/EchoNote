@@ -1,9 +1,8 @@
-import { Icon } from "@iconify-icon/react";
-import { Building2, Mail } from "lucide-react";
-
 import { commands as openerCommands } from "@echonote/plugin-opener2";
 import { Button } from "@echonote/ui/components/ui/button";
 import { Input } from "@echonote/ui/components/ui/input";
+import { Icon } from "@iconify-icon/react";
+import { Building2, Mail } from "lucide-react";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { getInitials } from "./shared";

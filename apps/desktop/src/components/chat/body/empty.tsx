@@ -1,5 +1,6 @@
 import { MessageSquareIcon, SparklesIcon } from "lucide-react";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useTabs } from "../../../store/zustand/tabs";
 
@@ -8,6 +9,7 @@ export function ChatBodyEmpty({
 }: {
   isModelConfigured?: boolean;
 }) {
+  const { t } = useTranslation();
   const openNew = useTabs((state) => state.openNew);
 
   const handleGoToSettings = useCallback(() => {
@@ -29,19 +31,18 @@ export function ChatBodyEmpty({
           <div className="flex items-center gap-2 mb-2">
             <img src="/assets/dynamic.gif" alt="EchoNote" className="w-5 h-5" />
             <span className="text-sm font-medium text-neutral-800">
-              EchoNote AI
+              {t("chat.aiName")}
             </span>
           </div>
           <p className="text-sm text-neutral-700 mb-2">
-            Hey! I need you to configure a language model to start chatting with
-            me!
+            {t("chat.configureModelMessage")}
           </p>
           <button
             onClick={handleGoToSettings}
             className="inline-flex w-fit items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-700 bg-gradient-to-b from-white to-stone-50 hover:from-neutral-50 hover:to-stone-100 rounded-full border border-neutral-300 transition-colors"
           >
             <SparklesIcon size={12} />
-            Open AI Settings
+            {t("chat.openAiSettings")}
           </button>
         </div>
       </div>
@@ -54,11 +55,11 @@ export function ChatBodyEmpty({
         <div className="flex items-center gap-1 mb-2">
           <img src="/assets/dynamic.gif" alt="EchoNote" className="w-5 h-5" />
           <span className="text-sm font-medium text-neutral-800">
-            EchoNote AI
+            {t("chat.aiName")}
           </span>
         </div>
         <p className="text-sm text-neutral-700 mb-2">
-          Hey! I can help you with a lot of cool stuff :)
+          {t("chat.welcomeMessage")}
         </p>
         <div className="flex flex-wrap gap-1.5">
           <button
@@ -66,14 +67,14 @@ export function ChatBodyEmpty({
             className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-700 bg-gradient-to-b from-white to-stone-50 hover:from-neutral-50 hover:to-stone-100 rounded-full border border-neutral-300 transition-colors"
           >
             <MessageSquareIcon size={12} />
-            Shortcuts
+            {t("chat.shortcuts")}
           </button>
           <button
             onClick={handleOpenPrompts}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-700 bg-gradient-to-b from-white to-stone-50 hover:from-neutral-50 hover:to-stone-100 rounded-full border border-neutral-300 transition-colors"
           >
             <SparklesIcon size={12} />
-            Prompts
+            {t("chat.prompts")}
           </button>
         </div>
       </div>

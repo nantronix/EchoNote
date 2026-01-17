@@ -25,7 +25,8 @@ const rule = defineRule({
         const source = node.source.value;
 
         const isTauriCommands =
-          source.startsWith("@echonote/plugin-") || source.endsWith("/tauri.gen");
+          source.startsWith("@echonote/plugin-") ||
+          source.endsWith("/tauri.gen");
 
         if (isTauriCommands) {
           for (const specifier of node.specifiers) {

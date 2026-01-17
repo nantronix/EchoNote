@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-
 import { cn } from "@echonote/utils";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { Image } from "@/components/image";
 

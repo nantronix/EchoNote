@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useMemo, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { useAuth } from "../../../../auth";
 import { useConfigValues } from "../../../../config/use-config";

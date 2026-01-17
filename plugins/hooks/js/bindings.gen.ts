@@ -35,9 +35,9 @@ export type AfterListeningStoppedArgs = {
  */
 resource_dir: string; 
 /**
- * Application-specific Hyprnote data.
+ * Application-specific EchoNote data.
  */
-app_hyprnote: string; 
+app_echonote: string; 
 /**
  * Optional meeting-specific data.
  */
@@ -51,35 +51,17 @@ export type BeforeListeningStartedArgs = {
  */
 resource_dir: string; 
 /**
- * Application-specific Hyprnote data.
+ * Application-specific EchoNote data.
  */
-app_hyprnote: string; 
+app_echonote: string; 
 /**
  * Optional meeting-specific data.
  */
 app_meeting?: string | null }
-/**
- * Defines a single hook to be executed on an event.
- */
-export type HookDefinition = { 
-/**
- * Shell command to execute when the hook is triggered.
- */
-command: string }
+export type HookDefinition = { command: string }
 export type HookEvent = { afterListeningStopped: { args: AfterListeningStoppedArgs } } | { beforeListeningStarted: { args: BeforeListeningStartedArgs } }
 export type HookResult = { command: string; success: boolean; exit_code: number | null; stdout: string; stderr: string }
-/**
- * Configuration for hook execution.
- */
-export type HooksConfig = { 
-/**
- * Configuration schema version.
- */
-version: number; 
-/**
- * Map of event names to their associated hook definitions.
- */
-on?: Partial<{ [key in string]: HookDefinition[] }> }
+export type HooksConfig = { version: number; on?: Partial<{ [key in string]: HookDefinition[] }> }
 
 /** tauri-specta globals **/
 

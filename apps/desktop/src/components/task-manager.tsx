@@ -1,3 +1,4 @@
+import { events as appleCalendarEvents } from "@echonote/plugin-apple-calendar";
 import { useEffect, useRef } from "react";
 import type { Queries } from "tinybase/with-schemas";
 import {
@@ -5,8 +6,6 @@ import {
   useScheduleTaskRunCallback,
   useSetTask,
 } from "tinytick/ui-react";
-
-import { events as appleCalendarEvents } from "@echonote/plugin-apple-calendar";
 
 import {
   CALENDAR_SYNC_TASK_ID,

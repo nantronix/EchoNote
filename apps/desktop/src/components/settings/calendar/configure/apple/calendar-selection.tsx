@@ -1,13 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import { RefreshCwIcon } from "lucide-react";
-import { useCallback, useEffect, useMemo } from "react";
-
 import {
   commands as appleCalendarCommands,
   colorToCSS,
 } from "@echonote/plugin-apple-calendar";
 import { Button } from "@echonote/ui/components/ui/button";
 import { cn } from "@echonote/utils";
+import { useQuery } from "@tanstack/react-query";
+import { RefreshCwIcon } from "lucide-react";
+import { useCallback, useEffect, useMemo } from "react";
 
 import * as main from "../../../../../store/tinybase/store/main";
 import { findCalendarByTrackingId } from "../../../../../utils/calendar";

@@ -1,6 +1,7 @@
 import { useForm } from "@tanstack/react-form";
 import { useQuery } from "@tanstack/react-query";
 import { disable, enable } from "@tauri-apps/plugin-autostart";
+import { useTranslation } from "react-i18next";
 
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { commands as listenerCommands } from "@echonote/plugin-listener";
@@ -9,6 +10,7 @@ import type { General, GeneralStorage } from "@echonote/store";
 import { useConfigValues } from "../../../config/use-config";
 import * as settings from "../../../store/tinybase/store/settings";
 import { AccountSettings } from "./account";
+import { AppLanguageView } from "./app-language";
 import { AppSettingsView } from "./app-settings";
 import { Audio } from "./audio";
 import { MainLanguageView } from "./main-language";
@@ -39,6 +41,7 @@ export function SettingsGeneral({
   audioRef?: React.Ref<HTMLDivElement>;
   activeSection?: SettingsSection;
 } = {}) {
+  const { t } = useTranslation();
   const value = useConfigValues([
     "autostart",
     "notification_detect",
@@ -159,33 +162,42 @@ export function SettingsGeneral({
                       {(telemetryConsentField) => (
                         <AppSettingsView
                           autostart={{
-                            title: "Start EchoNote automatically at login",
-                            description:
-                              "EchoNote will always be ready for action without you having to turn it on",
+                            title: t("settings.general.app.autostart.title"),
+                            description: t(
+                              "settings.general.app.autostart.description",
+                            ),
                             value: autostartField.state.value,
                             onChange: (val) => autostartField.handleChange(val),
                           }}
                           notificationDetect={{
-                            title:
-                              "Start/Stop listening to meetings automatically",
-                            description:
-                              "You don't have to press button every time — we'll start/stop listening for you",
+                            title: t(
+                              "settings.general.app.notificationDetect.title",
+                            ),
+                            description: t(
+                              "settings.general.app.notificationDetect.description",
+                            ),
                             value: notificationDetectField.state.value,
                             onChange: (val) =>
                               notificationDetectField.handleChange(val),
                           }}
                           saveRecordings={{
-                            title: "Save recordings",
-                            description:
-                              "Audio files of meetings will be saved locally and won't be leaving your device",
+                            title: t(
+                              "settings.general.app.saveRecordings.title",
+                            ),
+                            description: t(
+                              "settings.general.app.saveRecordings.description",
+                            ),
                             value: saveRecordingsField.state.value,
                             onChange: (val) =>
                               saveRecordingsField.handleChange(val),
                           }}
                           telemetryConsent={{
-                            title: "Share usage data",
-                            description:
-                              "Help us improve EchoNote by sharing anonymous metadata like button clicks",
+                            title: t(
+                              "settings.general.app.telemetryConsent.title",
+                            ),
+                            description: t(
+                              "settings.general.app.telemetryConsent.description",
+                            ),
                             value: telemetryConsentField.state.value,
                             onChange: (val) =>
                               telemetryConsentField.handleChange(val),
@@ -202,8 +214,11 @@ export function SettingsGeneral({
       </div>
 
       <div ref={languageRef}>
-        <h2 className="font-semibold font-serif mb-4">Language & Vocabulary</h2>
+        <h2 className="font-semibold font-serif mb-4">
+          {t("settings.general.language.title")}
+        </h2>
         <div className="space-y-6">
+          <AppLanguageView />
           <form.Field name="ai_language">
             {(field) => (
               <MainLanguageView
@@ -222,8 +237,9 @@ export function SettingsGeneral({
                   supportedLanguages={supportedLanguages}
                 />
                 <span className="text-xs text-neutral-500">
-                  Providers outside {suggestedProviders.data?.join(", ")} may
-                  not work properly.
+                  {t("settings.general.language.providerWarning", {
+                    providers: suggestedProviders.data?.join(", "),
+                  })}
                 </span>
               </>
             )}
@@ -232,7 +248,9 @@ export function SettingsGeneral({
       </div>
 
       <div ref={notificationsRef}>
-        <h2 className="font-semibold font-serif mb-4">Notifications</h2>
+        <h2 className="font-semibold font-serif mb-4">
+          {t("settings.general.notifications.title")}
+        </h2>
         <NotificationSettingsView />
       </div>
 

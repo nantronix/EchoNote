@@ -1,17 +1,16 @@
 import {
+  type EnhanceTemplate,
+  commands as templateCommands,
+  type TemplateSection,
+} from "@echonote/plugin-template";
+import { templateSectionSchema } from "@echonote/store";
+import {
   generateObject,
   type LanguageModel,
   smoothStream,
   streamText,
 } from "ai";
 import { z } from "zod";
-
-import {
-  type EnhanceTemplate,
-  commands as templateCommands,
-  type TemplateSection,
-} from "@echonote/plugin-template";
-import { templateSectionSchema } from "@echonote/store";
 
 import type { TaskArgsMapTransformed, TaskConfig } from ".";
 import type { Store } from "../../../tinybase/store/main";

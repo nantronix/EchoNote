@@ -1,9 +1,3 @@
-import { Icon } from "@iconify-icon/react";
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { allShortcuts, allTemplates } from "content-collections";
-import { CircleHelp } from "lucide-react";
-import { useMemo, useState } from "react";
-
 import {
   Tooltip,
   TooltipContent,
@@ -11,6 +5,11 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { Icon } from "@iconify-icon/react";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { allShortcuts, allTemplates } from "content-collections";
+import { CircleHelp } from "lucide-react";
+import { useMemo, useState } from "react";
 
 import { DownloadButton } from "@/components/download-button";
 import { SlashSeparator } from "@/components/slash-separator";

@@ -10,13 +10,13 @@ RUN corepack enable
 FROM node-base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/bot/package.json apps/bot/package.json
-RUN pnpm fetch --filter @hypr/bot
+RUN pnpm fetch --filter @echonote/bot
 
 FROM deps AS build
 COPY apps/bot apps/bot
-RUN pnpm install --filter @hypr/bot --frozen-lockfile
-RUN pnpm --filter @hypr/bot run build
-RUN pnpm deploy --filter @hypr/bot --prod --legacy /runtime
+RUN pnpm install --filter @echonote/bot --frozen-lockfile
+RUN pnpm --filter @echonote/bot run build
+RUN pnpm deploy --filter @echonote/bot --prod --legacy /runtime
 
 FROM node:22-slim AS runtime
 WORKDIR /app

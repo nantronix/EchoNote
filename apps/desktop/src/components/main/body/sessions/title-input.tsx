@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslation } from "react-i18next";
 
 import { cn } from "@echonote/utils";
 
@@ -24,6 +25,7 @@ export const TitleInput = forwardRef<
     onGenerateTitle?: () => void;
   }
 >(({ tab, onNavigateToEditor, onGenerateTitle }, ref) => {
+  const { t } = useTranslation();
   const {
     id: sessionId,
     state: { view },
@@ -61,7 +63,7 @@ export const TitleInput = forwardRef<
     return (
       <div className="w-full h-[28px] flex items-center">
         <span className="text-xl font-semibold text-muted-foreground animate-pulse">
-          Generating title...
+          {t("session.generatingTitle")}
         </span>
       </div>
     );
@@ -85,6 +87,7 @@ export const TitleInput = forwardRef<
       getInitialTitle={getInitialTitle}
       onNavigateToEditor={onNavigateToEditor}
       onGenerateTitle={onGenerateTitle}
+      placeholder={t("session.untitled")}
     />
   );
 });
@@ -98,6 +101,7 @@ const TitleInputInner = memo(
       getInitialTitle: () => string;
       onNavigateToEditor?: () => void;
       onGenerateTitle?: () => void;
+      placeholder: string;
     }
   >(
     (
@@ -107,6 +111,7 @@ const TitleInputInner = memo(
         getInitialTitle,
         onNavigateToEditor,
         onGenerateTitle,
+        placeholder,
       },
       ref,
     ) => {
@@ -290,7 +295,7 @@ const TitleInputInner = memo(
           <input
             ref={internalRef}
             id={`title-input-${sessionId}-${editorId}`}
-            placeholder="Untitled"
+            placeholder={placeholder}
             type="text"
             onChange={(e) => {
               setLocalTitle(e.target.value);

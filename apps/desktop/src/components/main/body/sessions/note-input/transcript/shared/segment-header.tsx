@@ -1,6 +1,3 @@
-import chroma from "chroma-js";
-import { useCallback, useMemo } from "react";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,6 +8,8 @@ import {
   DropdownMenuTrigger,
 } from "@echonote/ui/components/ui/dropdown-menu";
 import { cn } from "@echonote/utils";
+import chroma from "chroma-js";
+import { useCallback, useMemo } from "react";
 
 import * as main from "../../../../../../../store/tinybase/store/main";
 import { type Segment, SegmentKey } from "../../../../../../../utils/segment";

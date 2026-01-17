@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-
-import { cn } from "@echonote/utils";
 
 import { SlashSeparator } from "@/components/slash-separator";
 

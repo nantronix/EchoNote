@@ -1,6 +1,5 @@
-import { Pause, Play } from "lucide-react";
-
 import { cn } from "@echonote/utils";
+import { Pause, Play } from "lucide-react";
 
 import { useAudioPlayer } from "./provider";
 

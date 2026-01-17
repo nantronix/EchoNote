@@ -1,16 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
-import { arch, platform } from "@tauri-apps/plugin-os";
-import {
-  AlertCircle,
-  Download,
-  FolderOpen,
-  HelpCircle,
-  Loader2,
-  Trash2,
-  X,
-} from "lucide-react";
-import { useCallback } from "react";
-
 import {
   commands as localSttCommands,
   type SupportedSttModel,
@@ -23,6 +10,18 @@ import {
   AccordionTrigger,
 } from "@echonote/ui/components/ui/accordion";
 import { cn } from "@echonote/utils";
+import { useQuery } from "@tanstack/react-query";
+import { arch, platform } from "@tauri-apps/plugin-os";
+import {
+  AlertCircle,
+  Download,
+  FolderOpen,
+  HelpCircle,
+  Loader2,
+  Trash2,
+  X,
+} from "lucide-react";
+import { useCallback } from "react";
 
 import { useBillingAccess } from "../../../../billing";
 import { useListener } from "../../../../contexts/listener";

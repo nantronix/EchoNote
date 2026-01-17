@@ -1,6 +1,3 @@
-import { ArrowDownUp, Plus, Search, X } from "lucide-react";
-import { useState } from "react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   Select,
@@ -8,6 +5,8 @@ import {
   SelectItem,
   SelectTrigger,
 } from "@echonote/ui/components/ui/select";
+import { ArrowDownUp, Plus, Search, X } from "lucide-react";
+import { useState } from "react";
 
 export const getInitials = (name?: string | null) => {
   if (!name) {

@@ -1,7 +1,6 @@
+import { Button } from "@echonote/ui/components/ui/button";
 import { LogIn } from "lucide-react";
 import { useCallback } from "react";
-
-import { Button } from "@echonote/ui/components/ui/button";
 
 import { useTabs } from "../../../../store/zustand/tabs";
 

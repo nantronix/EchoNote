@@ -1,6 +1,6 @@
 - Scope: `apps/desktop/src` folder.
 - Usage:
-  - `import { commands as analyticsCommands } from "@hypr/plugin-analytics";`.
+  - `import { commands as analyticsCommands } from "@echonote/plugin-analytics";`.
   - `analyticsCommands.event({ event: "SOMETHING_USING_UNDERSCORE", other_props_a: "1", other_props_b: 2 })`
   - `analyticsCommands.setProperties({ set: {} })`
 - Notes:

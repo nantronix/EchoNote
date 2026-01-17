@@ -1,3 +1,5 @@
+import { Typewriter } from "@echonote/ui/components/ui/typewriter";
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
@@ -8,9 +10,6 @@ import {
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
-
-import { Typewriter } from "@echonote/ui/components/ui/typewriter";
-import { cn } from "@echonote/utils";
 
 import { Image } from "@/components/image";
 import { MockWindow } from "@/components/mock-window";

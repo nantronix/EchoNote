@@ -1,6 +1,5 @@
-import { X } from "lucide-react";
-
 import { cn } from "@echonote/utils";
+import { X } from "lucide-react";
 
 import type { DownloadProgress, ToastType } from "./types";
 

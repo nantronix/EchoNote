@@ -1,12 +1,11 @@
-import { AudioLinesIcon, SparklesIcon } from "lucide-react";
-import { useCallback, useRef } from "react";
-
 import { Button } from "@echonote/ui/components/ui/button";
 import {
   ScrollFadeOverlay,
   useScrollFade,
 } from "@echonote/ui/components/ui/scroll-fade";
 import { cn } from "@echonote/utils";
+import { AudioLinesIcon, SparklesIcon } from "lucide-react";
+import { useCallback, useRef } from "react";
 
 import { type Tab, useTabs } from "../../../store/zustand/tabs";
 import { LLM } from "../../settings/ai/llm";

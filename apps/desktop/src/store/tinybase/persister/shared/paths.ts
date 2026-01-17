@@ -1,6 +1,5 @@
-import { sep } from "@tauri-apps/api/path";
-
 import { commands as settingsCommands } from "@echonote/plugin-settings";
+import { sep } from "@tauri-apps/api/path";
 
 export const SESSION_META_FILE = "_meta.json";
 export const SESSION_TRANSCRIPT_FILE = "transcript.json";

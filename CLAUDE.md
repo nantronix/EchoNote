@@ -46,7 +46,7 @@ task stripe                  # Listen to Stripe webhooks
 - **apps/api**: Backend API (Hono + Bun)
 - **crates/**: 80+ Rust libraries for audio processing, transcription, LLM integration
 - **plugins/**: 40+ Tauri plugins for native features (calendar, contacts, audio, search, etc.)
-- **packages/**: Shared TS packages (`@hypr/ui`, `@hypr/utils`, `@hypr/store`, etc.)
+- **packages/**: Shared TS packages (`@echonote/ui`, `@echonote/utils`, `@echonote/store`, etc.)
 
 ### Key Tech Stack
 - **Frontend**: React 19, TailwindCSS 4, TanStack Query/Router/Form

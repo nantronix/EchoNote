@@ -1,6 +1,5 @@
-import { Icon } from "@iconify-icon/react";
-
 import { cn } from "@echonote/utils";
+import { Icon } from "@iconify-icon/react";
 
 import {
   GITHUB_LAST_SEEN_STARS,

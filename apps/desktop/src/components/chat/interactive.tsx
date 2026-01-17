@@ -1,8 +1,7 @@
+import { cn } from "@echonote/utils";
 import { Resizable } from "re-resizable";
 import { type ReactNode, useState } from "react";
 import { createPortal } from "react-dom";
-
-import { cn } from "@echonote/utils";
 
 export function InteractiveContainer({
   children,

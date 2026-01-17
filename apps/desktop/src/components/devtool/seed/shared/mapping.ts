@@ -1,4 +1,7 @@
-import type { MappingSessionParticipant, MappingTagSession } from "@echonote/store";
+import type {
+  MappingSessionParticipant,
+  MappingTagSession,
+} from "@echonote/store";
 
 import { DEFAULT_USER_ID, id } from "../../../../utils";
 

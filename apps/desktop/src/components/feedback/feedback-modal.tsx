@@ -1,13 +1,12 @@
+import { commands as miscCommands } from "@echonote/plugin-misc";
+import { commands as openerCommands } from "@echonote/plugin-opener2";
+import { Button } from "@echonote/ui/components/ui/button";
+import { cn } from "@echonote/utils";
 import { arch, version as osVersion, platform } from "@tauri-apps/plugin-os";
 import { Bug, Lightbulb, X } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { create } from "zustand";
-
-import { commands as miscCommands } from "@echonote/plugin-misc";
-import { commands as openerCommands } from "@echonote/plugin-opener2";
-import { Button } from "@echonote/ui/components/ui/button";
-import { cn } from "@echonote/utils";
 
 import { env } from "../../env";
 

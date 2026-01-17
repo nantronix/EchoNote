@@ -7,7 +7,7 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@hypr/ui/*": ["./src/*"]
+      "@echonote/ui/*": ["./src/*"]
     }
   }
 }

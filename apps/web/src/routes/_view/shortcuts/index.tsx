@@ -1,10 +1,9 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { allShortcuts } from "content-collections";
 import { useCallback, useEffect, useMemo, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { DownloadButton } from "@/components/download-button";
 import { MDXLink } from "@/components/mdx";

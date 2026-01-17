@@ -1,13 +1,13 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Hyprnote Control",
-  "mainBinaryName": "Hyprnote Control",
-  "identifier": "com.hyprnote.control",
+  "productName": "EchoNote Control",
+  "mainBinaryName": "EchoNote Control",
+  "identifier": "com.echonote.control",
   "plugins": {
     "updater": {
       "active": true,
       "endpoints": [
-        "https://control.hyprnote.com/update/{{target}}-{{arch}}/{{current_version}}?channel=stable"
+        "https://control.echonote.com/update/{{target}}-{{arch}}/{{current_version}}?channel=stable"
       ]
     }
   }

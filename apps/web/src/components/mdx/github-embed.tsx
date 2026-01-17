@@ -1,12 +1,11 @@
-import { Check, Copy } from "lucide-react";
-import { useState } from "react";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
 
 export function GithubEmbed({
   code,

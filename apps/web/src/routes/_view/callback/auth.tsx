@@ -1,9 +1,8 @@
+import { cn } from "@echonote/utils";
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { z } from "zod";
-
-import { cn } from "@echonote/utils";
 
 import { isAdminEmail } from "@/functions/admin";
 import { getSupabaseServerClient } from "@/functions/supabase";

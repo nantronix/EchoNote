@@ -1,0 +1,453 @@
+{
+  "common": {
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "search": "Search",
+    "settings": "Settings",
+    "advanced": "Advanced",
+    "disconnect": "Disconnect",
+    "reconnect": "Reconnect",
+    "reconnecting": "Reconnecting...",
+    "add": "Add",
+    "remove": "Remove",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "done": "Done",
+    "open": "Open",
+    "openInNewTab": "Open in New Tab",
+    "refresh": "Refresh",
+    "retry": "Retry",
+    "select": "Select",
+    "selectAll": "Select All",
+    "none": "None",
+    "all": "All",
+    "yes": "Yes",
+    "no": "No",
+    "ok": "OK",
+    "apply": "Apply",
+    "reset": "Reset",
+    "clear": "Clear",
+    "unknown": "Unknown",
+    "noResults": "No results found",
+    "emptyState": "Nothing here yet"
+  },
+  "app": {
+    "name": "EchoNote",
+    "tagline": "Where Conversations Stay Yours"
+  },
+  "onboarding": {
+    "welcome": {
+      "getStarted": "Get Started"
+    },
+    "permissions": {
+      "title": "Permissions needed for best experience",
+      "microphone": "Microphone",
+      "microphoneAuthorized": "Good to go :)",
+      "microphoneUnauthorized": "To capture your voice",
+      "systemAudio": "System audio",
+      "systemAudioAuthorized": "Good to go :)",
+      "systemAudioDevMode": "Dev mode - permission check skipped",
+      "systemAudioUnauthorized": "To capture what other people are saying",
+      "accessibility": "Accessibility",
+      "accessibilityAuthorized": "Good to go :)",
+      "accessibilityUnauthorized": "To sync mic inputs & mute from meetings",
+      "needAllPermissions": "Need all permissions to continue"
+    },
+    "configureNotice": {
+      "title": "AI models are needed for best experience",
+      "sttModel": "Speech-to-Text Model",
+      "sttDescription": "Deepgram, AssemblyAI, etc.",
+      "llmModel": "Language Model",
+      "llmDescription": "OpenAI, OpenRouter, etc.",
+      "required": "Required",
+      "optional": "Optional",
+      "configureInSettings": "You can configure these in Settings after setup."
+    },
+    "ready": {
+      "title": "You're all set!",
+      "description": "Everything is configured and ready to go",
+      "getStarted": "Get Started"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "general": {
+      "title": "General",
+      "account": {
+        "title": "Local Mode",
+        "description": "EchoNote is running in local-only mode. All data is stored locally on your device."
+      },
+      "app": {
+        "autostart": {
+          "title": "Start EchoNote automatically at login",
+          "description": "EchoNote will always be ready for action without you having to turn it on"
+        },
+        "notificationDetect": {
+          "title": "Start/Stop listening to meetings automatically",
+          "description": "You don't have to press button every time — we'll start/stop listening for you"
+        },
+        "saveRecordings": {
+          "title": "Save recordings",
+          "description": "Audio files of meetings will be saved locally and won't be leaving your device"
+        },
+        "telemetryConsent": {
+          "title": "Share usage data",
+          "description": "Help us improve EchoNote by sharing anonymous metadata like button clicks"
+        }
+      },
+      "language": {
+        "title": "Language & Vocabulary",
+        "mainLanguage": "Main Language",
+        "spokenLanguages": "Spoken Languages",
+        "providerWarning": "Providers outside {{providers}} may not work properly.",
+        "appLanguage": "App Language",
+        "appLanguageDescription": "Choose the display language for the app interface"
+      },
+      "notifications": {
+        "title": "Notifications"
+      },
+      "permissions": {
+        "title": "Permissions",
+        "microphone": "Microphone",
+        "systemAudio": "System Audio",
+        "accessibility": "Accessibility",
+        "granted": "Granted",
+        "denied": "Denied",
+        "openSettings": "Open System Settings"
+      },
+      "audio": {
+        "title": "Audio",
+        "inputDevices": "Input devices",
+        "outputDevices": "Output devices",
+        "speakerDevice": "Speaker",
+        "microphoneDevice": "Microphone",
+        "noDevices": "No devices found",
+        "inputDragHint": "Drag to set microphone priority. Top device will be auto-selected.",
+        "outputDragHint": "Drag to set speaker priority. Top device will be auto-selected.",
+        "active": "Active"
+      },
+      "permissions": {
+        "title": "Permissions",
+        "microphone": "Microphone",
+        "microphoneDescription": "Required to record your voice during meetings and calls",
+        "systemAudio": "System audio",
+        "systemAudioDescription": "Required to capture other participants' voices in meetings",
+        "accessibility": "Accessibility",
+        "accessibilityDescription": "Required to detect meeting apps and sync mute status",
+        "havingTrouble": "Having trouble?",
+        "youCan": "You can",
+        "request": "Request,",
+        "resetWord": "Reset",
+        "or": "or",
+        "openPanel": "Open",
+        "permissionPanel": "permission panel."
+      },
+      "notifications": {
+        "title": "Notifications",
+        "eventNotifications": "Event notifications",
+        "eventNotificationsDescription": "Get notified 5 minutes before calendar events start",
+        "microphoneDetection": "Microphone detection",
+        "microphoneDetectionDescription": "Automatically detect when a meeting starts based on microphone activity.",
+        "excludeApps": "Exclude apps from detection",
+        "excludeAppsDescription": "These apps will not trigger detection.",
+        "typeToAddApps": "Type to add apps...",
+        "forEnabledNotifications": "For enabled notifications",
+        "quitIntercept": "Quit intercept (Read-only)",
+        "quitInterceptDescription": "Prevents EchoNote from quitting, which is required for notifications to work.",
+        "respectDnd": "Respect Do-Not-Disturb mode",
+        "respectDndDescription": "Don't show notifications when Do-Not-Disturb is enabled on your system",
+        "default": "default",
+        "addCustom": "Add"
+      },
+      "spokenLanguages": {
+        "title": "Spoken languages",
+        "description": "Add other languages you use other than the main language",
+        "addLanguage": "Add language",
+        "noMatchingLanguages": "No matching languages found"
+      },
+      "mainLanguage": {
+        "title": "Main language",
+        "description": "Language for summaries, chats, and AI-generated responses"
+      }
+    },
+    "ai": {
+      "title": "AI",
+      "llm": {
+        "title": "Language Model",
+        "provider": "Provider",
+        "model": "Model",
+        "apiKey": "API Key",
+        "baseUrl": "Base URL",
+        "configure": "Configure",
+        "testConnection": "Test Connection",
+        "connectionSuccess": "Connection successful",
+        "connectionFailed": "Connection failed",
+        "missingConfig": "Please configure your AI provider in Settings"
+      },
+      "stt": {
+        "title": "Speech-to-Text",
+        "provider": "Provider",
+        "apiKey": "API Key",
+        "configure": "Configure",
+        "localModel": "Local Model",
+        "downloadModel": "Download Model",
+        "downloading": "Downloading...",
+        "modelReady": "Model ready"
+      }
+    },
+    "calendar": {
+      "title": "Calendar",
+      "connect": "Connect Calendar",
+      "disconnect": "Disconnect",
+      "connected": "Connected",
+      "notConnected": "Not connected",
+      "selectCalendars": "Select calendars to sync"
+    },
+    "data": {
+      "title": "Data",
+      "storage": "Storage",
+      "export": "Export Data",
+      "import": "Import Data",
+      "backupLocation": "Backup Location",
+      "clearData": "Clear All Data",
+      "clearDataWarning": "This will delete all your sessions, notes, and settings. This action cannot be undone."
+    },
+    "integrations": {
+      "title": "Integrations"
+    },
+    "lab": {
+      "title": "Lab",
+      "experimentalFeatures": "Experimental Features",
+      "warning": "These features are experimental and may not work as expected."
+    }
+  },
+  "sidebar": {
+    "timeline": "Timeline",
+    "search": "Search",
+    "newSession": "New Session",
+    "folders": "Folders",
+    "contacts": "Contacts",
+    "templates": "Templates",
+    "extensions": "Extensions",
+    "prompts": "Prompts",
+    "chatShortcuts": "Chat Shortcuts",
+    "calendar": "Calendar",
+    "ai": "AI Assistant",
+    "settings": "Settings",
+    "changelog": "What's New"
+  },
+  "tabs": {
+    "close": "Close",
+    "closeOthers": "Close Others",
+    "closeAll": "Close All",
+    "closeToRight": "Close to Right",
+    "pin": "Pin Tab",
+    "unpin": "Unpin Tab",
+    "duplicate": "Duplicate Tab"
+  },
+  "session": {
+    "title": "Session",
+    "newSession": "New Session",
+    "untitled": "Untitled",
+    "generatingTitle": "Generating title...",
+    "startListening": "Start listening",
+    "stopListening": "Stop listening",
+    "listening": "Listening...",
+    "transcript": "Transcript",
+    "notes": "Notes",
+    "enhancedNotes": "Enhanced Notes",
+    "participants": "Participants",
+    "recording": "Recording",
+    "transcribing": "Transcribing...",
+    "duration": "Duration",
+    "createdAt": "Created",
+    "updatedAt": "Last Modified",
+    "noTranscript": "No transcript yet",
+    "noNotes": "No notes yet",
+    "addParticipant": "Add Participant",
+    "removeParticipant": "Remove Participant",
+    "exportSession": "Export Session",
+    "deleteSession": "Delete Session",
+    "deleteSessionConfirm": "Are you sure you want to delete this session? This action cannot be undone.",
+    "moveToFolder": "Move to Folder",
+    "shareSession": "Share Session",
+    "joinAndListen": "Join & Listen",
+    "joinZoomAndListen": "Join Zoom & Start listening",
+    "joinGoogleMeetAndListen": "Join Google Meet & Start listening",
+    "joinWebexAndListen": "Join Webex & Start listening",
+    "joinTeamsAndListen": "Join Teams & Start listening",
+    "configure": "Configure",
+    "copyLink": "Copy link",
+    "comingSoon": "Coming soon",
+    "moveTo": "Move to",
+    "opening": "Opening...",
+    "showInFinder": "Show in Finder",
+    "deleteNote": "Delete note",
+    "deleting": "Deleting...",
+    "failedToDelete": "Failed to delete",
+    "deleteOnlyRecording": "Delete only recording",
+    "batchProcessing": "Batch processing",
+    "exportMemoToPdf": "Export Memo to PDF",
+    "exportSummaryToPdf": "Export Summary to PDF",
+    "exportTranscriptToPdf": "Export Transcript to PDF",
+    "exportToPdf": "Export to PDF",
+    "exporting": "Exporting...",
+    "exportTranscript": "Export Transcript",
+    "configureProvider": "You need to configure a language model to summarize this meeting",
+    "selectModel": "You need to select a model to summarize this meeting",
+    "configureApiKeyAndBaseUrl": "You need to configure the API key and base URL for your language model provider",
+    "configureApiKey": "You need to configure the API key for your language model provider",
+    "configureBaseUrl": "You need to configure the base URL for your language model provider"
+  },
+  "chat": {
+    "title": "Chat",
+    "placeholder": "Ask anything about this session...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "newChat": "New Chat",
+    "clearChat": "Clear Chat",
+    "copyMessage": "Copy Message",
+    "regenerate": "Regenerate",
+    "stopGenerating": "Stop",
+    "noMessages": "Start a conversation",
+    "errorMessage": "Failed to get response. Please try again.",
+    "attached": "Attached:",
+    "comingSoon": "Coming soon",
+    "shiftEnterHint": "Shift + Enter to add a new line",
+    "inputPlaceholder": "Ask & search about anything, or be creative!",
+    "toggle": "Toggle",
+    "close": "Close",
+    "askAnything": "Ask EchoNote anything",
+    "recentChats": "Recent Chats",
+    "noRecentChats": "No recent chats",
+    "aiName": "EchoNote AI",
+    "configureModelMessage": "Hey! I need you to configure a language model to start chatting with me!",
+    "openAiSettings": "Open AI Settings",
+    "welcomeMessage": "Hey! I can help you with a lot of cool stuff :)",
+    "shortcuts": "Shortcuts",
+    "prompts": "Prompts"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "people": "People",
+    "organizations": "Organizations",
+    "addPerson": "Add Person",
+    "addOrganization": "Add Organization",
+    "editPerson": "Edit Person",
+    "editOrganization": "Edit Organization",
+    "deletePerson": "Delete Person",
+    "deleteOrganization": "Delete Organization",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "notes": "Notes",
+    "pinContact": "Pin Contact",
+    "unpinContact": "Unpin Contact",
+    "recentSessions": "Recent Sessions"
+  },
+  "templates": {
+    "title": "Templates",
+    "create": "Create Template",
+    "edit": "Edit Template",
+    "delete": "Delete Template",
+    "duplicate": "Duplicate Template",
+    "name": "Template Name",
+    "description": "Description",
+    "sections": "Sections",
+    "addSection": "Add Section",
+    "removeSection": "Remove Section",
+    "sectionTitle": "Section Title",
+    "sectionPrompt": "Section Prompt",
+    "noTemplates": "No templates yet",
+    "useTemplate": "Use Template"
+  },
+  "extensions": {
+    "title": "Extensions",
+    "installed": "Installed",
+    "available": "Available",
+    "install": "Install",
+    "uninstall": "Uninstall",
+    "enable": "Enable",
+    "disable": "Disable",
+    "settings": "Extension Settings",
+    "noExtensions": "No extensions installed"
+  },
+  "prompts": {
+    "title": "Prompts",
+    "create": "Create Prompt",
+    "edit": "Edit Prompt",
+    "delete": "Delete Prompt",
+    "name": "Prompt Name",
+    "content": "Prompt Content",
+    "noPrompts": "No prompts yet"
+  },
+  "shortcuts": {
+    "title": "Chat Shortcuts",
+    "create": "Create Shortcut",
+    "edit": "Edit Shortcut",
+    "delete": "Delete Shortcut",
+    "name": "Shortcut Name",
+    "prompt": "Prompt",
+    "noShortcuts": "No shortcuts yet"
+  },
+  "folders": {
+    "title": "Folders",
+    "create": "Create Folder",
+    "rename": "Rename Folder",
+    "delete": "Delete Folder",
+    "moveTo": "Move to",
+    "noFolders": "No folders yet",
+    "root": "Root"
+  },
+  "feedback": {
+    "title": "Send Feedback",
+    "bugReport": "Bug Report",
+    "featureRequest": "Feature Request",
+    "placeholder": "Describe your feedback...",
+    "submit": "Submit",
+    "thanks": "Thank you for your feedback!"
+  },
+  "errors": {
+    "generic": "Something went wrong",
+    "networkError": "Network error. Please check your connection.",
+    "configError": "Configuration error",
+    "permissionDenied": "Permission denied",
+    "notFound": "Not found",
+    "timeout": "Request timed out",
+    "aiError": "AI service error. Please try again."
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "daysAgo": "{{count}} days ago",
+    "aWeekAgo": "a week ago",
+    "weeksAgo": "{{count}} weeks ago",
+    "aMonthAgo": "a month ago",
+    "monthsAgo": "{{count}} months ago",
+    "inDays": "in {{count}} days",
+    "inAWeek": "in a week",
+    "inWeeks": "in {{count}} weeks",
+    "inAMonth": "in a month",
+    "inMonths": "in {{count}} months",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "older": "Older",
+    "future": "Upcoming",
+    "goBackToNow": "Go back to now",
+    "noItemsToday": "No items today"
+  }
+}

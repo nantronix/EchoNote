@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 export function AccountSettings() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-4">
       <Container
-        title="Local Mode"
-        description="EchoNote is running in local-only mode. All data is stored locally on your device."
+        title={t("settings.general.account.title")}
+        description={t("settings.general.account.description")}
       />
     </div>
   );

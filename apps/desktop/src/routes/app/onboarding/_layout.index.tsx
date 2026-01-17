@@ -1,10 +1,9 @@
+import { commands as sfxCommands } from "@echonote/plugin-sfx";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { platform } from "@tauri-apps/plugin-os";
 import { Volume2Icon, VolumeXIcon } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { z } from "zod";
-
-import { commands as sfxCommands } from "@echonote/plugin-sfx";
 
 import {
   type NavigateTarget,
@@ -30,17 +29,15 @@ export const Route = createFileRoute("/app/onboarding/_layout/")({
 function Component() {
   const search = Route.useSearch();
   const navigate = useNavigate();
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    sfxCommands.play("BGM").catch(console.error);
+    if (!isMuted) {
+      sfxCommands.play("BGM").catch(console.error);
+    }
     return () => {
       sfxCommands.stop("BGM").catch(console.error);
     };
-  }, []);
-
-  useEffect(() => {
-    sfxCommands.setVolume("BGM", isMuted ? 0 : 1).catch(console.error);
   }, [isMuted]);
 
   const toggleMute = useCallback(() => {

@@ -1,3 +1,4 @@
+import { cn } from "@echonote/utils";
 import {
   memo,
   type RefObject,
@@ -6,8 +7,6 @@ import {
   useRef,
   useState,
 } from "react";
-
-import { cn } from "@echonote/utils";
 
 type ScrollDirection = "horizontal" | "vertical";
 

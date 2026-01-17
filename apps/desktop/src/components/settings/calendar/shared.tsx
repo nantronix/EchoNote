@@ -1,7 +1,6 @@
+import { OutlookIcon } from "@echonote/ui/components/icons/outlook";
 import { Icon } from "@iconify-icon/react";
 import type { ReactNode } from "react";
-
-import { OutlookIcon } from "@echonote/ui/components/icons/outlook";
 
 type CalendarProvider = {
   disabled: boolean;

@@ -1,3 +1,4 @@
+import type { TiptapEditor } from "@echonote/tiptap/editor";
 import {
   createContext,
   type ReactNode,
@@ -7,8 +8,6 @@ import {
   useMemo,
   useState,
 } from "react";
-
-import type { TiptapEditor } from "@echonote/tiptap/editor";
 
 interface CaretPositionContextValue {
   isCaretNearBottom: boolean;

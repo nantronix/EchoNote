@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { GripVertical } from "lucide-react";
 import { Reorder } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import {
   type AudioDevice,
@@ -10,9 +11,12 @@ import {
 import { cn } from "@echonote/utils";
 
 export function Audio() {
+  const { t } = useTranslation();
   return (
     <div className="space-y-6">
-      <h2 className="font-semibold font-serif">Audio</h2>
+      <h2 className="font-semibold font-serif">
+        {t("settings.general.audio.title")}
+      </h2>
       <DeviceList direction="input" />
       <DeviceList direction="output" />
     </div>
@@ -20,6 +24,7 @@ export function Audio() {
 }
 
 function DeviceList({ direction }: { direction: "input" | "output" }) {
+  const { t } = useTranslation();
   const queryClient = useQueryClient();
 
   const { data: devices } = useQuery({
@@ -118,12 +123,14 @@ function DeviceList({ direction }: { direction: "input" | "output" }) {
   return (
     <div>
       <h3 className="text-sm font-medium mb-2">
-        {direction === "input" ? "Input devices" : "Output devices"}
+        {direction === "input"
+          ? t("settings.general.audio.inputDevices")
+          : t("settings.general.audio.outputDevices")}
       </h3>
       <p className="text-xs text-neutral-500 mb-3">
         {direction === "input"
-          ? "Drag to set microphone priority. Top device will be auto-selected."
-          : "Drag to set speaker priority. Top device will be auto-selected."}
+          ? t("settings.general.audio.inputDragHint")
+          : t("settings.general.audio.outputDragHint")}
       </p>
       <Reorder.Group
         axis="y"
@@ -153,6 +160,7 @@ function DeviceItem({
   rank: number;
   isTop: boolean;
 }) {
+  const { t } = useTranslation();
   return (
     <Reorder.Item
       value={device}
@@ -169,7 +177,11 @@ function DeviceItem({
       <span className={cn(["text-sm flex-1 truncate", isTop && "font-medium"])}>
         {device.name}
       </span>
-      {isTop && <span className="text-xs text-neutral-500">Active</span>}
+      {isTop && (
+        <span className="text-xs text-neutral-500">
+          {t("settings.general.audio.active")}
+        </span>
+      )}
     </Reorder.Item>
   );
 }

@@ -1,12 +1,11 @@
-import { Contact2Icon } from "lucide-react";
-import { useCallback, useEffect } from "react";
-import { useShallow } from "zustand/shallow";
-
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@echonote/ui/components/ui/resizable";
+import { Contact2Icon } from "lucide-react";
+import { useCallback, useEffect } from "react";
+import { useShallow } from "zustand/shallow";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { type Tab, useTabs } from "../../../../store/zustand/tabs";

@@ -1,3 +1,5 @@
+import { init as initWindowsPlugin } from "@echonote/plugin-windows";
+import "@echonote/ui/globals.css";
 import * as Sentry from "@sentry/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
@@ -10,15 +12,13 @@ import {
   useCreateManager,
 } from "tinytick/ui-react";
 
-import { init as initWindowsPlugin } from "@echonote/plugin-windows";
-import "@echonote/ui/globals.css";
-
 import { ErrorComponent, NotFoundComponent } from "./components/control";
 import { EventListeners } from "./components/event-listeners";
 import { TaskManager } from "./components/task-manager";
 import { createToolRegistry } from "./contexts/tool-registry/core";
 import { env } from "./env";
 import { initExtensionGlobals } from "./extension-globals";
+import "./i18n";
 import { routeTree } from "./routeTree.gen";
 import {
   type Store,
@@ -50,6 +50,17 @@ declare module "@tanstack/react-router" {
   }
 }
 
+function LoadingScreen() {
+  return (
+    <div className="flex h-screen w-screen items-center justify-center bg-white">
+      <div className="flex flex-col items-center gap-4">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-neutral-200 border-t-blue-500" />
+        <p className="text-sm text-neutral-500">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const stores = useStores();
 
@@ -64,7 +75,7 @@ function App() {
   }, [store, settingsStore]);
 
   if (!store || !settingsStore || !aiTaskStore) {
-    return null;
+    return <LoadingScreen />;
   }
 
   return (

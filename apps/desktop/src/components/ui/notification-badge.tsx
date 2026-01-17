@@ -1,6 +1,5 @@
-import { AnimatePresence, motion } from "motion/react";
-
 import { cn } from "@echonote/utils";
+import { AnimatePresence, motion } from "motion/react";
 
 interface NotificationBadgeProps {
   show: boolean;

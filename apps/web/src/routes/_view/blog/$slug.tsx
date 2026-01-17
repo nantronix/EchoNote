@@ -1,10 +1,9 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allArticles } from "content-collections";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 import { DownloadButton } from "@/components/download-button";
 import { Image } from "@/components/image";

@@ -1,6 +1,3 @@
-import { Globe, MessageSquare, Plus, Search, X } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
-
 import type { ChatShortcut } from "@echonote/store";
 import { Button } from "@echonote/ui/components/ui/button";
 import { Switch } from "@echonote/ui/components/ui/switch";
@@ -10,6 +7,8 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { Globe, MessageSquare, Plus, Search, X } from "lucide-react";
+import { useCallback, useMemo, useState } from "react";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { type Tab, useTabs } from "../../../../store/zustand/tabs";

@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import { createFileRoute } from "@tanstack/react-router";
 import { useCallback, useEffect, useRef, useState } from "react";
-
-import { cn } from "@echonote/utils";
 
 export const Route = createFileRoute("/_view/product/bot")({
   component: Component,

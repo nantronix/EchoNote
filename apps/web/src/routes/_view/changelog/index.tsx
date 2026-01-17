@@ -1,10 +1,9 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
 import semver from "semver";
-
-import { cn } from "@echonote/utils";
 
 import { type ChangelogWithMeta, getChangelogList } from "@/changelog";
 import { defaultMDXComponents } from "@/components/mdx";

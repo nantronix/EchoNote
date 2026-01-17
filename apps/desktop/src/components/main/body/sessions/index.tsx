@@ -4,6 +4,7 @@ import { StickyNoteIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { cn } from "@echonote/utils";
@@ -49,6 +50,7 @@ export const TabItemNote: TabItem<Extract<Tab, { type: "sessions" }>> = ({
   handlePinThis,
   handleUnpinThis,
 }) => {
+  const { t } = useTranslation();
   const title = main.UI.useCell(
     "sessions",
     rowIdfromTab(tab),
@@ -64,7 +66,7 @@ export const TabItemNote: TabItem<Extract<Tab, { type: "sessions" }>> = ({
   return (
     <TabItemBase
       icon={<StickyNoteIcon className="w-4 h-4" />}
-      title={title || "Untitled"}
+      title={title || t("session.untitled")}
       selected={tab.active}
       active={isActive}
       finalizing={showSpinner}

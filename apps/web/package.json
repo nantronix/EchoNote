@@ -7,7 +7,7 @@
     "build": "vite build && cp public/sitemap.xml dist/client/sitemap.xml && pagefind --site ./dist/client",
     "serve": "vite preview",
     "test": "playwright test",
-    "typecheck": "CI=true pnpm -F @hypr/web build && tsc --project tsconfig.json --noEmit",
+    "typecheck": "CI=true pnpm -F @echonote/web build && tsc --project tsconfig.json --noEmit",
     "gen:agents": "node scripts/gen-agents.js"
   },
   "dependencies": {

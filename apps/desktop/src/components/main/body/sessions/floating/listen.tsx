@@ -1,6 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Spinner } from "@echonote/ui/components/ui/spinner";
 
@@ -43,6 +44,7 @@ function BeforeMeeingButton({
 }: {
   tab: Extract<Tab, { type: "sessions" }>;
 }) {
+  const { t } = useTranslation();
   const remote = useRemoteMeeting(tab.id);
   const isNarrow = useMediaQuery("(max-width: 870px)");
 
@@ -54,19 +56,27 @@ function BeforeMeeingButton({
 
   if (remote?.type === "zoom") {
     icon = <Icon icon="logos:zoom-icon" size={20} />;
-    text = isNarrow ? "Join & Listen" : "Join Zoom & Start listening";
+    text = isNarrow
+      ? t("session.joinAndListen")
+      : t("session.joinZoomAndListen");
   } else if (remote?.type === "google-meet") {
     icon = <Icon icon="logos:google-meet" size={20} />;
-    text = isNarrow ? "Join & Listen" : "Join Google Meet & Start listening";
+    text = isNarrow
+      ? t("session.joinAndListen")
+      : t("session.joinGoogleMeetAndListen");
   } else if (remote?.type === "webex") {
     icon = <Icon icon="simple-icons:webex" size={20} />;
-    text = isNarrow ? "Join & Listen" : "Join Webex & Start listening";
+    text = isNarrow
+      ? t("session.joinAndListen")
+      : t("session.joinWebexAndListen");
   } else if (remote?.type === "teams") {
     icon = <Icon icon="logos:microsoft-teams" size={20} />;
-    text = isNarrow ? "Join & Listen" : "Join Teams & Start listening";
+    text = isNarrow
+      ? t("session.joinAndListen")
+      : t("session.joinTeamsAndListen");
   } else {
     icon = <RecordingIcon disabled={isDisabled} />;
-    text = "Start listening";
+    text = t("session.startListening");
   }
 
   return (
@@ -96,6 +106,7 @@ function ListenSplitButton({
   onPrimaryClick: () => void;
   sessionId: string;
 }) {
+  const { t } = useTranslation();
   const openNew = useTabs((state) => state.openNew);
 
   const handleAction = useCallback(() => {
@@ -119,7 +130,7 @@ function ListenSplitButton({
                     <ActionableTooltipContent
                       message={warningMessage}
                       action={{
-                        label: "Configure",
+                        label: t("session.configure"),
                         handleClick: handleAction,
                       }}
                     />

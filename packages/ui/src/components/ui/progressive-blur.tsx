@@ -1,6 +1,5 @@
-import { HTMLMotionProps, motion } from "motion/react";
-
 import { cn } from "@echonote/utils";
+import { HTMLMotionProps, motion } from "motion/react";
 
 export const GRADIENT_ANGLES = {
   top: 0,

@@ -1,14 +1,3 @@
-import { useQueryClient } from "@tanstack/react-query";
-import { downloadDir } from "@tauri-apps/api/path";
-import { open as selectFile } from "@tauri-apps/plugin-dialog";
-import { Effect, pipe } from "effect";
-import {
-  EllipsisVerticalIcon,
-  FileTextIcon,
-  UploadCloudIcon,
-} from "lucide-react";
-import { useCallback, useState } from "react";
-
 import { commands as analyticsCommands } from "@echonote/plugin-analytics";
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { commands as listener2Commands } from "@echonote/plugin-listener2";
@@ -24,6 +13,16 @@ import {
   TooltipTrigger,
 } from "@echonote/ui/components/ui/tooltip";
 import { cn } from "@echonote/utils";
+import { useQueryClient } from "@tanstack/react-query";
+import { downloadDir } from "@tauri-apps/api/path";
+import { open as selectFile } from "@tauri-apps/plugin-dialog";
+import { Effect, pipe } from "effect";
+import {
+  EllipsisVerticalIcon,
+  FileTextIcon,
+  UploadCloudIcon,
+} from "lucide-react";
+import { useCallback, useState } from "react";
 
 import { fromResult } from "../../../../../effect";
 import { useRunBatch } from "../../../../../hooks/useRunBatch";

@@ -1,1 +1,1 @@
-# @hypr/pro
+# @echonote/pro

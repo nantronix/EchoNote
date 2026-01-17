@@ -1,6 +1,5 @@
-import { type RefObject, useLayoutEffect, useRef } from "react";
-
 import { commands } from "@echonote/plugin-overlay";
+import { type RefObject, useLayoutEffect, useRef } from "react";
 
 export function useFakeWindowBounds(
   name: string,

@@ -1,12 +1,11 @@
-import { Icon } from "@iconify-icon/react";
-import { Puzzle, Search } from "lucide-react";
-import { useMemo, useState } from "react";
-
 import { Badge } from "@echonote/ui/components/ui/badge";
 import { Button } from "@echonote/ui/components/ui/button";
 import { ButtonGroup } from "@echonote/ui/components/ui/button-group";
 import { Input } from "@echonote/ui/components/ui/input";
 import { Spinner } from "@echonote/ui/components/ui/spinner";
+import { Icon } from "@iconify-icon/react";
+import { Puzzle, Search } from "lucide-react";
+import { useMemo, useState } from "react";
 
 import { ConnectedServiceCard } from "./shared";
 

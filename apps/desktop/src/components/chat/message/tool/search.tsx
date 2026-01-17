@@ -1,6 +1,3 @@
-import { SearchIcon } from "lucide-react";
-import { useCallback } from "react";
-
 import { Card, CardContent } from "@echonote/ui/components/ui/card";
 import {
   Carousel,
@@ -9,6 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@echonote/ui/components/ui/carousel";
+import { SearchIcon } from "lucide-react";
+import { useCallback } from "react";
 
 import * as main from "../../../../store/tinybase/store/main";
 import { useTabs } from "../../../../store/zustand/tabs";

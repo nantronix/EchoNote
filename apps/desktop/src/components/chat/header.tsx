@@ -7,6 +7,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@echonote/ui/components/ui/button";
 import {
@@ -30,6 +31,7 @@ export function ChatHeader({
   onSelectChat: (chatGroupId: string) => void;
   handleClose: () => void;
 }) {
+  const { t } = useTranslation();
   const { chat } = useShell();
 
   return (
@@ -48,7 +50,7 @@ export function ChatHeader({
         <ChatActionButton
           icon={<Plus size={16} />}
           onClick={onNewChat}
-          title="New chat"
+          title={t("chat.newChat")}
         />
       </div>
 
@@ -62,12 +64,12 @@ export function ChatHeader({
             )
           }
           onClick={() => chat.sendEvent({ type: "SHIFT" })}
-          title="Toggle"
+          title={t("chat.toggle")}
         />
         <ChatActionButton
           icon={<X size={16} />}
           onClick={handleClose}
-          title="Close"
+          title={t("chat.close")}
         />
       </div>
     </div>
@@ -97,6 +99,7 @@ function ChatGroups({
   currentChatGroupId: string | undefined;
   onSelectChat: (chatGroupId: string) => void;
 }) {
+  const { t } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const currentChatTitle = main.UI.useCell(
@@ -123,7 +126,7 @@ function ChatGroups({
         >
           <MessageCircle className="w-3.5 h-3.5 text-neutral-400 group-hover:text-neutral-600 transition-colors" />
           <h3 className="font-medium text-neutral-700 text-xs truncate">
-            {currentChatTitle || "Ask EchoNote anything"}
+            {currentChatTitle || t("chat.askAnything")}
           </h3>
           <ChevronDown
             className={cn([
@@ -137,7 +140,7 @@ function ChatGroups({
         <div className="space-y-0.5">
           <div className="px-2 py-1.5">
             <h4 className="text-[10px] font-semibold text-neutral-500 uppercase tracking-wider">
-              Recent Chats
+              {t("chat.recentChats")}
             </h4>
           </div>
           {recentChatGroupIds.length > 0 ? (
@@ -157,7 +160,9 @@ function ChatGroups({
           ) : (
             <div className="px-3 py-6 text-center">
               <MessageCircle className="w-6 h-6 text-neutral-300 mx-auto mb-1.5" />
-              <p className="text-xs text-neutral-400">No recent chats</p>
+              <p className="text-xs text-neutral-400">
+                {t("chat.noRecentChats")}
+              </p>
             </div>
           )}
         </div>

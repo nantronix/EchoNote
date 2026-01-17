@@ -1,6 +1,5 @@
-import { ComponentPropsWithoutRef } from "react";
-
 import { cn } from "@echonote/utils";
+import { ComponentPropsWithoutRef } from "react";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   /**

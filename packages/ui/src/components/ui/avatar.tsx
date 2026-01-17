@@ -1,7 +1,6 @@
+import { cn } from "@echonote/utils";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import * as React from "react";
-
-import { cn } from "@echonote/utils";
 
 interface AvatarProps extends React.ComponentPropsWithoutRef<
   typeof AvatarPrimitive.Root

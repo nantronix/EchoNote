@@ -84,9 +84,15 @@ function printGlobalsChecklist(uiModules: UiModuleDefinition[]) {
   for (const [name, config] of Object.entries(CORE_MODULES)) {
     console.log(`  window.${config.global}  // ${name}`);
   }
-  console.log(`  window.${HYPR_MODULES["@echonote/store"].global}  // @echonote/store`);
-  console.log(`  window.${HYPR_MODULES["@echonote/tabs"].global}  // @echonote/tabs`);
-  console.log(`  window.${HYPR_MODULES["@echonote/ui"].global}  // @echonote/ui/*`);
+  console.log(
+    `  window.${HYPR_MODULES["@echonote/store"].global}  // @echonote/store`,
+  );
+  console.log(
+    `  window.${HYPR_MODULES["@echonote/tabs"].global}  // @echonote/tabs`,
+  );
+  console.log(
+    `  window.${HYPR_MODULES["@echonote/ui"].global}  // @echonote/ui/*`,
+  );
   console.log(
     `\nRequired UI subpaths in window.${HYPR_MODULES["@echonote/ui"].global}:\n`,
   );

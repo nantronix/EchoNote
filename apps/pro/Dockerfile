@@ -16,7 +16,7 @@ COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 RUN pnpm fetch
 COPY . .
 RUN pnpm install --frozen-lockfile
-RUN pnpm --filter="@hypr/pro" run build
+RUN pnpm --filter="@echonote/pro" run build
 
 FROM base AS runtime
 WORKDIR /app

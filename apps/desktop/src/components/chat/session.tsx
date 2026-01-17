@@ -1,12 +1,11 @@
 import { useChat } from "@ai-sdk/react";
-import type { ChatStatus } from "ai";
-import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
-
 import {
   commands as templateCommands,
   type Transcript,
 } from "@echonote/plugin-template";
 import type { ChatMessage, ChatMessageStorage } from "@echonote/store";
+import type { ChatStatus } from "ai";
+import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 
 import { CustomChatTransport } from "../../chat/transport";
 import type { HyprUIMessage } from "../../chat/types";

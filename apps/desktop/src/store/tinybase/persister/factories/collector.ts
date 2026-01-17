@@ -1,3 +1,8 @@
+import { commands as fs2Commands } from "@echonote/plugin-fs2";
+import {
+  commands as fsSyncCommands,
+  type ParsedDocument,
+} from "@echonote/plugin-fs-sync";
 import { createCustomPersister } from "tinybase/persisters/with-schemas";
 import type {
   PersistedChanges,
@@ -9,12 +14,6 @@ import type {
   MergeableStore,
   OptionalSchemas,
 } from "tinybase/with-schemas";
-
-import { commands as fs2Commands } from "@echonote/plugin-fs2";
-import {
-  commands as fsSyncCommands,
-  type ParsedDocument,
-} from "@echonote/plugin-fs-sync";
 
 import { StoreOrMergeableStore } from "../../store/shared";
 import {

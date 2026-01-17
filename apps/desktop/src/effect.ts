@@ -1,6 +1,5 @@
-import { Effect } from "effect";
-
 import { type Result } from "@echonote/plugin-listener";
+import { Effect } from "effect";
 
 export const fromResult = <A, E>(
   promise: Promise<Result<A, E>>,

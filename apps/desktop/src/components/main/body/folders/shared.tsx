@@ -1,6 +1,5 @@
-import { type ReactNode } from "react";
-
 import { cn } from "@echonote/utils";
+import { type ReactNode } from "react";
 
 export function Section({
   icon,

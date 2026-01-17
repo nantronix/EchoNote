@@ -1,6 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 import { useMutation } from "@tanstack/react-query";
 import { FolderIcon, Link2Icon, Loader2Icon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { commands as fsSyncCommands } from "@echonote/plugin-fs-sync";
 import { commands as openerCommands } from "@echonote/plugin-opener2";
@@ -18,6 +19,7 @@ import {
 import { SearchableFolderSubmenuContent } from "../shared/folder";
 
 export function Copy() {
+  const { t } = useTranslation();
   return (
     <Tooltip>
       <TooltipTrigger asChild>
@@ -27,11 +29,11 @@ export function Copy() {
           onSelect={(e) => e.preventDefault()}
         >
           <Link2Icon />
-          <span>Copy link</span>
+          <span>{t("session.copyLink")}</span>
         </DropdownMenuItem>
       </TooltipTrigger>
       <TooltipContent side="left">
-        <span>Coming soon</span>
+        <span>{t("session.comingSoon")}</span>
       </TooltipContent>
     </Tooltip>
   );
@@ -44,11 +46,12 @@ export function Folder({
   sessionId: string;
   setOpen?: (open: boolean) => void;
 }) {
+  const { t } = useTranslation();
   return (
     <DropdownMenuSub>
       <DropdownMenuSubTrigger className="cursor-pointer">
         <FolderIcon />
-        <span>Move to</span>
+        <span>{t("session.moveTo")}</span>
       </DropdownMenuSubTrigger>
       <SearchableFolderSubmenuContent sessionId={sessionId} setOpen={setOpen} />
     </DropdownMenuSub>
@@ -56,6 +59,7 @@ export function Folder({
 }
 
 export function ShowInFinder({ sessionId }: { sessionId: string }) {
+  const { t } = useTranslation();
   const { mutate, isPending } = useMutation({
     mutationFn: async () => {
       const result = await fsSyncCommands.sessionDir(sessionId);
@@ -80,7 +84,9 @@ export function ShowInFinder({ sessionId }: { sessionId: string }) {
       ) : (
         <Icon icon="ri:finder-line" />
       )}
-      <span>{isPending ? "Opening..." : "Show in Finder"}</span>
+      <span>
+        {isPending ? t("session.opening") : t("session.showInFinder")}
+      </span>
     </DropdownMenuItem>
   );
 }

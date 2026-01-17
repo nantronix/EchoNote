@@ -1,13 +1,10 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { message } from "@tauri-apps/plugin-dialog";
-
 import {
   type Permission,
   commands as permissionsCommands,
   type PermissionStatus,
 } from "@echonote/plugin-permissions";
-
-import { relaunch } from "../store/tinybase/store/save";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { message } from "@tauri-apps/plugin-dialog";
 
 export function usePermission(type: Permission) {
   const status = useQuery({
@@ -105,11 +102,16 @@ export function usePermissions() {
   const systemAudioPermission = useMutation({
     mutationFn: () => permissionsCommands.requestPermission("systemAudio"),
     onSuccess: () => {
-      void message("The app will now restart to apply the changes", {
-        kind: "info",
-        title: "System Audio Status Changed",
-      });
-      setTimeout(() => relaunch(), 2000);
+      void message(
+        "System audio permission granted. Please restart the app to apply changes.",
+        {
+          kind: "info",
+          title: "System Audio Status Changed",
+        },
+      );
+      setTimeout(() => {
+        void systemAudioPermissionStatus.refetch();
+      }, 1000);
     },
     onError: console.error,
   });

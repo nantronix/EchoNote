@@ -1,9 +1,8 @@
 import { MDXContent } from "@content-collections/mdx/react";
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { allTemplates } from "content-collections";
-
-import { cn } from "@echonote/utils";
 
 import { DownloadButton } from "@/components/download-button";
 import { MDXLink } from "@/components/mdx";

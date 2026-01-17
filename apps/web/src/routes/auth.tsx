@@ -1,10 +1,9 @@
+import { cn } from "@echonote/utils";
 import { Icon } from "@iconify-icon/react";
 import { useMutation } from "@tanstack/react-query";
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-
-import { cn } from "@echonote/utils";
 
 import { Image } from "@/components/image";
 import { doAuth, doMagicLinkAuth, fetchUser } from "@/functions/auth";

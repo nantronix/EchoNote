@@ -1,3 +1,6 @@
+import type { JSONContent } from "@echonote/tiptap/editor";
+import { EMPTY_TIPTAP_DOC } from "@echonote/tiptap/shared";
+import "@echonote/tiptap/styles.css";
 import {
   createFileRoute,
   Link,
@@ -5,10 +8,6 @@ import {
   useNavigate,
 } from "@tanstack/react-router";
 import { lazy, Suspense, useMemo, useState } from "react";
-
-import type { JSONContent } from "@echonote/tiptap/editor";
-import { EMPTY_TIPTAP_DOC } from "@echonote/tiptap/shared";
-import "@echonote/tiptap/styles.css";
 
 import { TranscriptDisplay } from "@/components/transcription/transcript-display";
 import { UploadArea } from "@/components/transcription/upload-area";

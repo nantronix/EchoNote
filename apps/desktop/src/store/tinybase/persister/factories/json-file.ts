@@ -1,11 +1,3 @@
-import { sep } from "@tauri-apps/api/path";
-import { createCustomPersister } from "tinybase/persisters/with-schemas";
-import type {
-  PersistedChanges,
-  Persists,
-} from "tinybase/persisters/with-schemas";
-import type { MergeableStore, OptionalSchemas } from "tinybase/with-schemas";
-
 import { commands as fs2Commands } from "@echonote/plugin-fs2";
 import {
   commands as fsSyncCommands,
@@ -13,6 +5,13 @@ import {
 } from "@echonote/plugin-fs-sync";
 import { events as notifyEvents } from "@echonote/plugin-notify";
 import { commands as settingsCommands } from "@echonote/plugin-settings";
+import { sep } from "@tauri-apps/api/path";
+import { createCustomPersister } from "tinybase/persisters/with-schemas";
+import type {
+  PersistedChanges,
+  Persists,
+} from "tinybase/persisters/with-schemas";
+import type { MergeableStore, OptionalSchemas } from "tinybase/with-schemas";
 
 import { StoreOrMergeableStore } from "../../store/shared";
 import { isFileNotFoundError } from "../shared/fs";
