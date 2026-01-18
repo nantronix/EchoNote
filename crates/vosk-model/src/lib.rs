@@ -67,10 +67,10 @@ impl VoskModel {
 
     pub fn model_size_bytes(&self) -> u64 {
         match self {
-            VoskModel::SmallCn => 42_000_000,
-            VoskModel::LargeCn => 1_300_000_000,
-            VoskModel::SmallEn => 40_000_000,
-            VoskModel::LargeEn => 1_800_000_000,
+            VoskModel::SmallCn => 43_898_754,
+            VoskModel::LargeCn => 1_358_736_686,
+            VoskModel::SmallEn => 41_205_931,
+            VoskModel::LargeEn => 1_070_186_240,
         }
     }
 
